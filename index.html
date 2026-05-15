@@ -1,0 +1,755 @@
+<!-- PWA 支持 -->
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta name="theme-color" content="#F0F7F4">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>粤语闯关王 - 趣味听说训练</title>
+    <!-- 引入 Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 自定义字体与基础设置 */
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            background-color: #F0F7F4; /* 浅青绿护眼背景 */
+            user-select: none; /* 防止学生误选中文本 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 隐藏滚动条但保留功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 动画定义 */
+        @keyframes pop {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        @keyframes fire-pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px orange); }
+            50% { transform: scale(1.2); filter: drop-shadow(0 0 8px red); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 2px orange); }
+        }
+
+        .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        .animate-shake { animation: shake 0.4s ease-in-out; }
+        .animate-fire { animation: fire-pulse 1.5s infinite; }
+
+        /* 按钮点击效果 */
+        .btn-active:active {
+            transform: scale(0.95);
+        }
+
+        /* 卡片玻璃拟态微调 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="h-screen w-screen overflow-hidden flex flex-col text-gray-700">
+
+    <!-- ================= 顶部状态栏 ================= -->
+    <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-20 shrink-0">
+        <!-- 左侧：标题与进度 -->
+        <div class="flex items-center gap-4 w-1/3">
+            <div class="text-2xl font-bold text-blue-600 tracking-wider cursor-pointer" onclick="showMap()">
+                <i class="fa-solid fa-graduation-cap mr-2"></i>粤语闯关王
+            </div>
+            <div class="hidden md:flex flex-col w-48">
+                <div class="flex justify-between text-xs text-gray-500 mb-1">
+                    <span>总进度</span>
+                    <span id="global-progress-text">0 / 500</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="global-progress-bar" class="bg-blue-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间：当前关卡信息 -->
+        <div class="flex items-center gap-2 bg-yellow-50 px-4 py-1.5 rounded-full border border-yellow-200">
+            <span class="text-yellow-600 font-bold text-lg" id="header-level-name">第 1 关</span>
+            <span class="text-gray-400">|</span>
+            <span class="text-gray-600 font-medium" id="header-level-topic">基础问候</span>
+        </div>
+
+        <!-- 右侧：连胜、错题本与设置 -->
+        <div class="flex items-center gap-4 w-1/3 justify-end">
+            <div class="flex items-center gap-2 bg-orange-50 px-3 py-1.5 rounded-lg border border-orange-100">
+                <i class="fa-solid fa-fire text-orange-500 animate-fire"></i>
+                <span class="font-bold text-orange-600" id="streak-display">0 天</span>
+            </div>
+            
+            <!-- 新增：错题本按钮 -->
+            <button onclick="showWrongBook()" class="relative group bg-red-50 hover:bg-red-100 text-red-500 px-3 py-2 rounded-lg border border-red-100 transition-all btn-active">
+                <i class="fa-solid fa-book-open mr-1"></i> 
+                <span class="font-bold hidden sm:inline">错题本</span>
+                <span id="wrong-count-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+            </button>
+
+            <button onclick="resetData()" class="text-gray-400 hover:text-red-500 transition-colors p-2" title="重置进度">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= 主内容区域 ================= -->
+    <main class="flex-1 relative overflow-hidden flex">
+        
+        <!-- 视图 1: 关卡地图 (Level Map) -->
+        <div id="view-map" class="absolute inset-0 bg-[#F0F7F4] p-6 overflow-y-auto no-scrollbar transition-opacity duration-300">
+            <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 pb-10">
+                <!-- 关卡卡片将由 JS 动态生成 -->
+            </div>
+        </div>
+
+        <!-- 视图 2: 学习挑战区 (Learning Zone) -->
+        <div id="view-learning" class="absolute inset-0 bg-gray-100 hidden flex-col items-center justify-center p-4">
+            
+            <!-- 顶部返回与进度 -->
+            <div class="absolute top-4 left-4 z-10">
+                <button onclick="showMap()" class="bg-white hover:bg-gray-50 text-gray-600 px-4 py-2 rounded-xl shadow-md font-bold flex items-center gap-2 btn-active transition-all">
+                    <i class="fa-solid fa-arrow-left"></i> 返回地图
+                </button>
+            </div>
+            <div class="absolute top-4 right-4 z-10 flex gap-2">
+                <div class="bg-white px-3 py-1 rounded-lg shadow text-sm font-bold text-gray-500">
+                    <i class="fa-solid fa-star text-yellow-400"></i> <span id="level-stars">0</span>/3
+                </div>
+            </div>
+
+            <!-- 核心卡片容器 -->
+            <div class="w-full max-w-4xl h-full flex flex-col justify-center gap-6">
+                
+                <!-- 步骤指示器 -->
+                <div class="flex justify-center gap-4 mb-2">
+                    <div id="step-indicator-1" class="w-32 h-3 bg-blue-500 rounded-full transition-all"></div>
+                    <div id="step-indicator-2" class="w-32 h-3 bg-gray-300 rounded-full transition-all"></div>
+                </div>
+
+                <!-- 阶段 1: 听力挑战 -->
+                <div id="stage-listening" class="flex-1 flex flex-col items-center justify-center animate-pop">
+                    <div class="glass-card w-full max-w-2xl rounded-3xl shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden">
+                        <!-- 装饰背景 -->
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-cyan-300"></div>
+                        
+                        <h2 class="text-2xl font-bold text-gray-700 mb-6">听音辨意</h2>
+                        
+                        <!-- 播放按钮区域 -->
+                        <div class="mb-8 relative group cursor-pointer" onclick="playCurrentAudio()">
+                            <div class="w-32 h-32 bg-blue-50 rounded-full flex items-center justify-center shadow-inner group-hover:bg-blue-100 transition-colors btn-active">
+                                <i class="fa-solid fa-volume-high text-5xl text-blue-500"></i>
+                            </div>
+                            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white px-3 py-1 rounded-full text-xs text-gray-500 shadow-sm whitespace-nowrap">
+                                点击播放粤语
+                            </div>
+                        </div>
+
+                        <!-- 选项网格 -->
+                        <div class="grid grid-cols-2 gap-4 w-full" id="options-container">
+                            <!-- 选项由 JS 生成 -->
+                        </div>
+
+                        <!-- 反馈区域 -->
+                        <div id="listening-feedback" class="hidden mt-6 w-full p-4 rounded-xl flex items-center justify-center gap-3 font-bold text-lg">
+                            <!-- 动态内容 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 阶段 2: 跟读模仿 -->
+                <div id="stage-speaking" class="hidden flex-1 flex flex-col items-center justify-center animate-pop">
+                    <div class="glass-card w-full max-w-2xl rounded-3xl shadow-xl p-8 flex flex-col items-center text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-emerald-300"></div>
+
+                        <h2 class="text-2xl font-bold text-gray-700 mb-2">大声跟读</h2>
+                        <p class="text-gray-500 mb-6">模仿发音，培养语感</p>
+
+                        <!-- 句子展示 -->
+                        <div class="bg-green-50 border-2 border-green-100 rounded-2xl p-6 w-full mb-8">
+                            <div class="text-3xl font-bold text-gray-800 mb-2" id="speak-cantonese">你好</div>
+                            <div class="text-lg text-green-600 font-mono mb-1" id="speak-jyutping">nei5 hou2</div>
+                            <div class="text-gray-500" id="speak-meaning">你好</div>
+                        </div>
+
+                        <!-- 操作区 -->
+                        <div class="flex flex-col items-center gap-4 w-full">
+                            <button onclick="playCurrentAudio()" class="w-full py-3 bg-white border border-gray-200 text-gray-600 rounded-xl font-bold hover:bg-gray-50 btn-active flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-volume-high"></i> 再听一次
+                            </button>
+                            
+                            <button onclick="completeSpeaking()" class="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-xl shadow-lg shadow-green-200 btn-active flex items-center justify-center gap-3 transition-all">
+                                <i class="fa-solid fa-microphone"></i> 我已跟读
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 完成弹窗 (Overlay) -->
+                <div id="completion-modal" class="hidden absolute inset-0 bg-black/50 z-50 flex items-center justify-center backdrop-blur-sm">
+                    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl animate-pop m-4">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">关卡完成!</h2>
+                        <p class="text-gray-500 mb-6">你获得了 <span id="modal-stars" class="text-yellow-500 font-bold text-xl">★★★</span></p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-blue-50 p-3 rounded-xl">
+                                <div class="text-xs text-gray-500">本关掌握</div>
+                                <div class="font-bold text-blue-600" id="modal-sentences">50 句</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-xl">
+                                <div class="text-xs text-gray-500">总进度</div>
+                                <div class="font-bold text-orange-600" id="modal-total">128/500</div>
+                            </div>
+                        </div>
+
+                        <button onclick="showMap()" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-bold text-lg shadow-lg btn-active">
+                            继续挑战下一关
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 视图 3: 错题本 (Wrong Book View) -->
+        <div id="view-wrongbook" class="absolute inset-0 bg-[#F0F7F4] hidden flex-col p-6 overflow-hidden">
+            <div class="flex items-center justify-between mb-6">
+                <button onclick="showMap()" class="bg-white hover:bg-gray-50 text-gray-600 px-4 py-2 rounded-xl shadow-md font-bold flex items-center gap-2 btn-active transition-all">
+                    <i class="fa-solid fa-arrow-left"></i> 返回地图
+                </button>
+                <h2 class="text-2xl font-bold text-red-600"><i class="fa-solid fa-book-medical mr-2"></i>我的错题本</h2>
+                <div class="w-24"></div> <!-- 占位保持居中 -->
+            </div>
+
+            <div class="flex-1 overflow-y-auto no-scrollbar pb-10">
+                <div id="wrong-list-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 错题卡片将在这里生成 -->
+                </div>
+                
+                <!-- 空状态提示 -->
+                <div id="wrong-empty-state" class="hidden flex-col items-center justify-center h-full text-gray-400">
+                    <i class="fa-solid fa-clipboard-check text-6xl mb-4 text-green-200"></i>
+                    <p class="text-xl font-bold">太棒了！目前没有错题</p>
+                    <p class="text-sm">继续保持，争取全对通关！</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= JavaScript 逻辑 ================= -->
+    <script>
+        // ==========================================
+        // 1. 数据定义 (Data Structure)
+        // ==========================================
+        
+        const LEVELS_CONFIG = [
+            { id: 1, topic: "基础问候", icon: "fa-hand-wave", color: "blue" },
+            { id: 2, topic: "礼貌用语", icon: "fa-heart", color: "red" },
+            { id: 3, topic: "饮食点餐", icon: "fa-utensils", color: "orange" },
+            { id: 4, topic: "购物问价", icon: "fa-tags", color: "purple" },
+            { id: 5, topic: "交通出行", icon: "fa-bus", color: "indigo" },
+            { id: 6, topic: "问路求助", icon: "fa-map-location-dot", color: "cyan" },
+            { id: 7, topic: "时间与数字", icon: "fa-clock", color: "teal" },
+            { id: 8, topic: "紧急情况", icon: "fa-triangle-exclamation", color: "red" },
+            { id: 9, topic: "校园生活", icon: "fa-school", color: "blue" },
+            { id: 10, topic: "情感日常", icon: "fa-face-smile", color: "yellow" }
+        ];
+
+        const SENTENCE_DB = {
+            1: [
+                { c: "你好", j: "nei5 hou2", m: "你好", d: ["再见", "谢谢", "对不起"] },
+                { c: "早晨", j: "zou2 san4", m: "早上好", d: ["晚上好", "中午好", "晚安"] },
+                { c: "再见", j: "zoi3 gin3", m: "再见", d: ["你好", "欢迎", "慢走"] },
+                { c: "最近点啊？", j: "zeoi3 gan6 dim2 aa3?", m: "最近怎么样？", d: ["你去哪里？", "你叫什么？", "吃饭了吗？"] },
+                { c: "好耐冇见", j: "hou2 noi6 mou5 gin3", m: "好久不见", d: ["初次见面", "很高兴", "没关系"] }
+            ],
+            2: [
+                { c: "多谢", j: "do1 ze6", m: "谢谢", d: ["对不起", "你好", "再见"] },
+                { c: "唔该", j: "m4 goi1", m: "劳驾/谢谢 (服务)", d: ["你好", "再见", "对不起"] },
+                { c: "对不起", j: "deoi3 bat1 hei2", m: "对不起", d: ["没关系", "谢谢你", "不要紧"] },
+                { c: "冇关系", j: "mou5 gwaan1 hai6", m: "没关系", d: ["对不起", "谢谢你", "你好"] },
+                { c: "辛苦晒", j: "san1 fu2 saai3", m: "辛苦了", d: ["谢谢你", "对不起", "你好"] }
+            ]
+        };
+
+        function generateSentences(levelId) {
+            if (SENTENCE_DB[levelId]) return SENTENCE_DB[levelId];
+            const base = SENTENCE_DB[1][0];
+            let sentences = [];
+            for(let i=1; i<=50; i++) {
+                sentences.push({
+                    c: `第${levelId}关句子${i}`,
+                    j: `dei6 ${levelId} gun1 cou3 zi5 ${i}`,
+                    m: `这是第${levelId}关的第${i}个练习句`,
+                    d: [`错误选项 A`, `错误选项 B`, `错误选项 C`]
+                });
+            }
+            return sentences;
+        }
+
+        // ==========================================
+        // 2. 状态管理 (State Management)
+        // ==========================================
+        
+        const STATE = {
+            currentLevel: 1,
+            currentSentenceIndex: 0,
+            stage: 'listening',
+            streak: 0,
+            lastLoginDate: null,
+            levelProgress: {},
+            totalLearned: 0,
+            wrongBook: [] // 新增：错题本数组 [{id, levelId, sentence, date}]
+        };
+
+        function initApp() {
+            loadData();
+            checkStreak();
+            renderMap();
+            updateHeader();
+        }
+
+        function loadData() {
+            const saved = localStorage.getItem('cantoneseHeroData');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                STATE.streak = parsed.streak || 0;
+                STATE.lastLoginDate = parsed.lastLoginDate;
+                STATE.levelProgress = parsed.levelProgress || {};
+                STATE.totalLearned = parsed.totalLearned || 0;
+                STATE.wrongBook = parsed.wrongBook || []; // 加载错题本
+            }
+        }
+
+        function saveData() {
+            localStorage.setItem('cantoneseHeroData', JSON.stringify({
+                streak: STATE.streak,
+                lastLoginDate: STATE.lastLoginDate,
+                levelProgress: STATE.levelProgress,
+                totalLearned: STATE.totalLearned,
+                wrongBook: STATE.wrongBook // 保存错题本
+            }));
+            updateHeader();
+        }
+
+        function checkStreak() {
+            const today = new Date().toDateString();
+            if (STATE.lastLoginDate !== today) {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                
+                if (STATE.lastLoginDate === yesterday.toDateString()) {
+                    STATE.streak++;
+                } else if (STATE.lastLoginDate !== today) {
+                    if (STATE.lastLoginDate) STATE.streak = 1;
+                    else STATE.streak = 1;
+                }
+                STATE.lastLoginDate = today;
+                saveData();
+            }
+        }
+
+        function resetData() {
+            if(confirm("确定要重置所有学习进度吗？")) {
+                localStorage.removeItem('cantoneseHeroData');
+                location.reload();
+            }
+        }
+
+        // ==========================================
+        // 3. 视图渲染 (Rendering)
+        // ==========================================
+
+        function renderMap() {
+            const container = document.querySelector('#view-map .grid');
+            container.innerHTML = '';
+
+            LEVELS_CONFIG.forEach((level, index) => {
+                const progress = STATE.levelProgress[level.id] || { stars: 0, completed: false };
+                const isLocked = index > 0 && !STATE.levelProgress[LEVELS_CONFIG[index-1].id]?.completed;
+                
+                const colorClasses = {
+                    blue: 'bg-blue-500', red: 'bg-red-500', orange: 'bg-orange-500',
+                    purple: 'bg-purple-500', indigo: 'bg-indigo-500', cyan: 'bg-cyan-500',
+                    teal: 'bg-teal-500', yellow: 'bg-yellow-500'
+                };
+                const bgColor = colorClasses[level.color] || 'bg-gray-500';
+
+                const card = document.createElement('div');
+                card.className = `relative group cursor-pointer transition-all duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : 'hover:-translate-y-2 hover:shadow-xl'}`;
+                
+                let starsHtml = '';
+                for(let i=1; i<=3; i++) {
+                    starsHtml += `<i class="fa-solid fa-star text-${i <= progress.stars ? 'yellow-400' : 'gray-300'} text-sm"></i>`;
+                }
+
+                card.innerHTML = `
+                    <div class="bg-white rounded-2xl p-6 shadow-md border-b-4 ${bgColor.replace('bg-', 'border-')} h-48 flex flex-col items-center justify-between">
+                        <div class="w-16 h-16 ${bgColor} rounded-full flex items-center justify-center text-white text-2xl shadow-lg mb-2">
+                            <i class="fa-solid ${level.icon}"></i>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-gray-700 text-lg">第${level.id}关</div>
+                            <div class="text-gray-500 text-sm mb-2">${level.topic}</div>
+                            <div class="flex gap-1 justify-center">${starsHtml}</div>
+                        </div>
+                        ${isLocked ? '<div class="absolute inset-0 flex items-center justify-center bg-black/10 rounded-2xl"><i class="fa-solid fa-lock text-3xl text-gray-400"></i></div>' : ''}
+                    </div>
+                `;
+
+                if (!isLocked) {
+                    card.onclick = () => startLevel(level.id);
+                }
+
+                container.appendChild(card);
+            });
+        }
+
+        function updateHeader() {
+            document.getElementById('streak-display').innerText = `${STATE.streak}天`;
+            document.getElementById('global-progress-text').innerText = `${STATE.totalLearned} / 500`;
+            const percent = Math.min(100, (STATE.totalLearned / 500) * 100);
+            document.getElementById('global-progress-bar').style.width = `${percent}%`;
+            
+            // 更新错题本徽章
+            const wrongCount = STATE.wrongBook.length;
+            document.getElementById('wrong-count-badge').innerText = wrongCount;
+            if(wrongCount > 0) {
+                document.getElementById('wrong-count-badge').classList.remove('hidden');
+            } else {
+                document.getElementById('wrong-count-badge').classList.add('hidden');
+            }
+        }
+
+        function showMap() {
+            hideAllViews();
+            document.getElementById('view-map').classList.remove('hidden');
+            renderMap();
+            updateHeader();
+        }
+
+        function hideAllViews() {
+            document.getElementById('view-learning').classList.add('hidden');
+            document.getElementById('view-learning').classList.remove('flex');
+            document.getElementById('view-map').classList.add('hidden');
+            document.getElementById('view-wrongbook').classList.add('hidden');
+            document.getElementById('view-wrongbook').classList.remove('flex');
+            document.getElementById('completion-modal').classList.add('hidden');
+        }
+
+        function startLevel(levelId) {
+            STATE.currentLevel = levelId;
+            STATE.currentSentenceIndex = 0;
+            STATE.stage = 'listening';
+            
+            if (!STATE.levelProgress[levelId]) {
+                STATE.levelProgress[levelId] = { stars: 0, completed: false, readCount: 0, correctCount: 0 };
+            }
+
+            const levelInfo = LEVELS_CONFIG.find(l => l.id === levelId);
+            document.getElementById('header-level-name').innerText = `第${levelId}关`;
+            document.getElementById('header-level-topic').innerText = levelInfo.topic;
+            document.getElementById('level-stars').innerText = STATE.levelProgress[levelId].stars;
+
+            hideAllViews();
+            document.getElementById('view-learning').classList.remove('hidden');
+            document.getElementById('view-learning').classList.add('flex');
+            
+            loadSentence();
+        }
+
+        // ==========================================
+        // 4. 错题本逻辑 (Wrong Book Logic)
+        // ==========================================
+
+        function showWrongBook() {
+            hideAllViews();
+            document.getElementById('view-wrongbook').classList.remove('hidden');
+            document.getElementById('view-wrongbook').classList.add('flex');
+            renderWrongBookList();
+        }
+
+        function renderWrongBookList() {
+            const container = document.getElementById('wrong-list-container');
+            const emptyState = document.getElementById('wrong-empty-state');
+            container.innerHTML = '';
+
+            if (STATE.wrongBook.length === 0) {
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            emptyState.classList.remove('flex');
+
+            // 倒序排列，最新的在最前
+            const reversedBook = [...STATE.wrongBook].reverse();
+
+            reversedBook.forEach((item, index) => {
+                const realIndex = STATE.wrongBook.length - 1 - index; // 获取原始数组索引以便删除
+                
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl p-5 shadow-md border-l-4 border-red-400 flex flex-col justify-between animate-pop";
+                
+                // 查找关卡名称
+                const levelName = LEVELS_CONFIG.find(l => l.id === item.levelId)?.topic || `第${item.levelId}关`;
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">${levelName}</span>
+                            <span class="text-xs text-gray-400">${new Date(item.date).toLocaleDateString()}</span>
+                        </div>
+                        <div class="text-xl font-bold text-gray-800 mb-1">${item.sentence.c}</div>
+                        <div class="text-sm text-gray-500 font-mono mb-3">${item.sentence.j}</div>
+                        <div class="text-gray-600 text-sm bg-gray-50 p-2 rounded">意思：${item.sentence.m}</div>
+                    </div>
+                    <div class="mt-4 flex gap-2">
+                        <button onclick="playWrongAudio(${realIndex})" class="flex-1 py-2 bg-blue-50 text-blue-600 rounded-lg font-bold text-sm hover:bg-blue-100 btn-active">
+                            <i class="fa-solid fa-volume-high"></i> 重听
+                        </button>
+                        <button onclick="removeWrongItem(${realIndex})" class="flex-1 py-2 bg-green-50 text-green-600 rounded-lg font-bold text-sm hover:bg-green-100 btn-active">
+                            <i class="fa-solid fa-check"></i> 已掌握
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function playWrongAudio(index) {
+            const item = STATE.wrongBook[index];
+            if(item && 'speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(item.sentence.c);
+                utterance.lang = 'zh-HK';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function removeWrongItem(index) {
+            // 从数组中移除
+            STATE.wrongBook.splice(index, 1);
+            saveData();
+            renderWrongBookList();
+            // 简单的成功反馈动画
+            const container = document.getElementById('wrong-list-container');
+            container.classList.add('opacity-50');
+            setTimeout(() => container.classList.remove('opacity-50'), 200);
+        }
+
+        // ==========================================
+        // 5. 学习流程逻辑 (Learning Flow)
+        // ==========================================
+
+        function loadSentence() {
+            const sentences = generateSentences(STATE.currentLevel);
+            
+            if (STATE.currentSentenceIndex >= sentences.length) {
+                finishLevel();
+                return;
+            }
+
+            const sentence = sentences[STATE.currentSentenceIndex];
+            
+            document.getElementById('stage-listening').classList.remove('hidden');
+            document.getElementById('stage-speaking').classList.add('hidden');
+            document.getElementById('listening-feedback').classList.add('hidden');
+            document.getElementById('listening-feedback').className = "hidden mt-6 w-full p-4 rounded-xl flex items-center justify-center gap-3 font-bold text-lg";
+            
+            document.getElementById('step-indicator-1').classList.replace('bg-gray-300', 'bg-blue-500');
+            document.getElementById('step-indicator-2').classList.replace('bg-blue-500', 'bg-gray-300');
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            let allOptions = [
+                { text: sentence.m, correct: true },
+                ...sentence.d.map(text => ({ text, correct: false }))
+            ];
+            allOptions.sort(() => Math.random() - 0.5);
+
+            allOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "bg-white hover:bg-blue-50 border-2 border-gray-100 hover:border-blue-200 p-4 rounded-xl text-lg font-medium text-gray-700 shadow-sm transition-all btn-active h-20 flex items-center justify-center";
+                btn.innerText = opt.text;
+                btn.onclick = () => handleAnswer(opt.correct, btn, sentence);
+                optionsContainer.appendChild(btn);
+            });
+
+            setTimeout(() => playCurrentAudio(), 500);
+        }
+
+        function playCurrentAudio() {
+            const sentences = generateSentences(STATE.currentLevel);
+            const sentence = sentences[STATE.currentSentenceIndex];
+            
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(sentence.c);
+                utterance.lang = 'zh-HK';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert(`请跟读：${sentence.c} (${sentence.j})`);
+            }
+        }
+
+        function handleAnswer(isCorrect, btnElement, sentenceObj) {
+            const allBtns = document.querySelectorAll('#options-container button');
+            allBtns.forEach(b => b.disabled = true);
+
+            const feedbackEl = document.getElementById('listening-feedback');
+            feedbackEl.classList.remove('hidden');
+
+            if (isCorrect) {
+                btnElement.classList.remove('bg-white', 'border-gray-100');
+                btnElement.classList.add('bg-green-100', 'border-green-500', 'text-green-700');
+                
+                feedbackEl.classList.add('bg-green-100', 'text-green-700');
+                feedbackEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> 答对了！真棒！';
+                
+                STATE.levelProgress[STATE.currentLevel].correctCount++;
+                
+                setTimeout(() => {
+                    nextStage();
+                }, 1200);
+            } else {
+                btnElement.classList.remove('bg-white', 'border-gray-100');
+                btnElement.classList.add('bg-red-100', 'border-red-500', 'text-red-700', 'animate-shake');
+                
+                feedbackEl.classList.add('bg-red-100', 'text-red-700');
+                feedbackEl.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> 已加入错题本，再听一次试试？';
+                
+                // *** 核心修改：记录错题 ***
+                addToWrongBook(STATE.currentLevel, sentenceObj);
+
+                setTimeout(() => {
+                    loadSentence(); 
+                }, 2000);
+            }
+        }
+
+        // 添加到错题本
+        function addToWrongBook(levelId, sentence) {
+            // 避免重复添加完全相同的题目（可选优化）
+            const exists = STATE.wrongBook.some(item => item.sentence.c === sentence.c && item.levelId === levelId);
+            if (!exists) {
+                STATE.wrongBook.push({
+                    id: Date.now(),
+                    levelId: levelId,
+                    sentence: sentence,
+                    date: new Date().toISOString()
+                });
+                saveData();
+            }
+        }
+
+        function nextStage() {
+            STATE.stage = 'speaking';
+            document.getElementById('stage-listening').classList.add('hidden');
+            document.getElementById('stage-speaking').classList.remove('hidden');
+            
+            document.getElementById('step-indicator-1').classList.replace('bg-blue-500', 'bg-green-500');
+            document.getElementById('step-indicator-2').classList.replace('bg-gray-300', 'bg-green-500');
+
+            const sentences = generateSentences(STATE.currentLevel);
+            const sentence = sentences[STATE.currentSentenceIndex];
+            
+            document.getElementById('speak-cantonese').innerText = sentence.c;
+            document.getElementById('speak-jyutping').innerText = sentence.j;
+            document.getElementById('speak-meaning').innerText = sentence.m;
+        }
+
+        function completeSpeaking() {
+            STATE.levelProgress[STATE.currentLevel].readCount = (STATE.levelProgress[STATE.currentLevel].readCount || 0) + 1;
+            STATE.currentSentenceIndex++;
+            
+            if (!STATE.levelProgress[STATE.currentLevel].learnedIndices) {
+                STATE.levelProgress[STATE.currentLevel].learnedIndices = [];
+            }
+            const currentIndex = STATE.currentSentenceIndex - 1;
+            if (!STATE.levelProgress[STATE.currentLevel].learnedIndices.includes(currentIndex)) {
+                STATE.levelProgress[STATE.currentLevel].learnedIndices.push(currentIndex);
+                STATE.totalLearned++;
+            }
+
+            saveData();
+            loadSentence();
+        }
+
+        function finishLevel() {
+            const progress = STATE.levelProgress[STATE.currentLevel];
+            const totalSentences = generateSentences(STATE.currentLevel).length;
+            
+            let stars = 1;
+            if (progress.correctCount === totalSentences) stars = 2;
+            if (progress.readCount >= totalSentences * 0.8) stars = 3;
+            
+            if (stars > progress.stars) {
+                progress.stars = stars;
+                progress.completed = true;
+                saveData();
+            }
+
+            document.getElementById('modal-stars').innerHTML = '★'.repeat(stars) + '<span class="text-gray-300">' + '★'.repeat(3-stars) + '</span>';
+            document.getElementById('modal-sentences').innerText = `${totalSentences} 句`;
+            document.getElementById('modal-total').innerText = `${STATE.totalLearned}/500`;
+            
+            document.getElementById('completion-modal').classList.remove('hidden');
+            playWinSound();
+        }
+
+        function playWinSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1046.5, ctx.currentTime + 0.1);
+                gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.5);
+            } catch (e) { console.log("Audio not supported"); }
+        }
+
+        initApp();
+		
+		// 注册 Service Worker
+		if ('serviceWorker' in navigator) {
+		  window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/sw.js')
+			  .then(reg => console.log('Service Worker registered:', reg))
+			  .catch(err => console.error('SW registration failed:', err));
+		  });
+		}
+
+    </script>
+</body>
+</html>
