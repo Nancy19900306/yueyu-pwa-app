@@ -1,11 +1,9 @@
 const CACHE_NAME = 'cantonese-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  'https://cdn.tailwindcss.com',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
-  // 如果你有其他本地资源（如字体、图片），也加进来
+  './',
+  './index.html',
+  './manifest.json',
+  './icon-192.png'
 ];
 
 // 安装阶段：缓存核心资源

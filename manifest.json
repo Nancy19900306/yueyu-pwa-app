@@ -2,7 +2,7 @@
   "name": "粤语闯关王",
   "short_name": "粤语闯关",
   "description": "趣味粤语听说训练，每日打卡闯关",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#F0F7F4",
   "background_color": "#F0F7F4",

@@ -1,6 +1,6 @@
 <!-- PWA 支持 -->
-<link rel="manifest" href="/manifest.json">
-<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <meta name="theme-color" content="#F0F7F4">
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -744,7 +744,7 @@
 		// 注册 Service Worker
 		if ('serviceWorker' in navigator) {
 		  window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/sw.js')
+			navigator.serviceWorker.register('./sw.js')
 			  .then(reg => console.log('Service Worker registered:', reg))
 			  .catch(err => console.error('SW registration failed:', err));
 		  });
