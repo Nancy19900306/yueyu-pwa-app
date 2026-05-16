@@ -1,0 +1,3513 @@
+{
+  "generatedAt": "2026-05-16T17:06:43.436Z",
+  "voice": "zh-HK-HiuMaanNeural",
+  "total": 498,
+  "levels": {
+    "1": [
+      {
+        "id": 1,
+        "text": "你好",
+        "filename": "l1_1_你好.mp3",
+        "jyutping": "nei5 hou2",
+        "meaning": "你好"
+      },
+      {
+        "id": 2,
+        "text": "早晨",
+        "filename": "l1_2_早晨.mp3",
+        "jyutping": "zou2 san4",
+        "meaning": "早上好"
+      },
+      {
+        "id": 3,
+        "text": "晚安",
+        "filename": "l1_3_晚安.mp3",
+        "jyutping": "maan5 on1",
+        "meaning": "晚安"
+      },
+      {
+        "id": 4,
+        "text": "再见",
+        "filename": "l1_4_再见.mp3",
+        "jyutping": "zoi3 gin3",
+        "meaning": "再见"
+      },
+      {
+        "id": 5,
+        "text": "拜拜",
+        "filename": "l1_5_拜拜.mp3",
+        "jyutping": "baai1 baai3",
+        "meaning": "拜拜"
+      },
+      {
+        "id": 6,
+        "text": "你好吗",
+        "filename": "l1_6_你好吗.mp3",
+        "jyutping": "nei5 hou2 maa3",
+        "meaning": "你好吗"
+      },
+      {
+        "id": 7,
+        "text": "我很好",
+        "filename": "l1_7_我很好.mp3",
+        "jyutping": "ngo5 han2 hou2",
+        "meaning": "我很好"
+      },
+      {
+        "id": 8,
+        "text": "最近点样",
+        "filename": "l1_8_最近点样.mp3",
+        "jyutping": "zeoi3 gan6 dim2 joeng2",
+        "meaning": "最近怎么样"
+      },
+      {
+        "id": 9,
+        "text": "好久不见",
+        "filename": "l1_9_好久不见.mp3",
+        "jyutping": "hou2 noi6 bat1 gin3",
+        "meaning": "好久不见"
+      },
+      {
+        "id": 10,
+        "text": "好耐冇见",
+        "filename": "l1_10_好耐冇见.mp3",
+        "jyutping": "hou2 noi6 mou5 gin3",
+        "meaning": "好久不见"
+      },
+      {
+        "id": 11,
+        "text": "你叫咩名",
+        "filename": "l1_11_你叫咩名.mp3",
+        "jyutping": "nei5 giu3 me1 meng2",
+        "meaning": "你叫什么名字"
+      },
+      {
+        "id": 12,
+        "text": "我系小明",
+        "filename": "l1_12_我系小明.mp3",
+        "jyutping": "ngo5 hai6 siu2 ming4",
+        "meaning": "我是小明"
+      },
+      {
+        "id": 13,
+        "text": "你几多岁",
+        "filename": "l1_13_你几多岁.mp3",
+        "jyutping": "nei5 gei2 do1 seoi3",
+        "meaning": "你多大年纪"
+      },
+      {
+        "id": 14,
+        "text": "我二十岁",
+        "filename": "l1_14_我二十岁.mp3",
+        "jyutping": "ngo5 ji6 sap6 seoi3",
+        "meaning": "我二十岁"
+      },
+      {
+        "id": 15,
+        "text": "你住边度",
+        "filename": "l1_15_你住边度.mp3",
+        "jyutping": "nei5 zyu6 bin1 dou6",
+        "meaning": "你住哪里"
+      },
+      {
+        "id": 16,
+        "text": "我住香港",
+        "filename": "l1_16_我住香港.mp3",
+        "jyutping": "ngo5 zyu6 hoeng1 gong2",
+        "meaning": "我住香港"
+      },
+      {
+        "id": 17,
+        "text": "你做边行",
+        "filename": "l1_17_你做边行.mp3",
+        "jyutping": "nei5 zou6 bin1 hong4",
+        "meaning": "你做什么工作"
+      },
+      {
+        "id": 18,
+        "text": "我系学生",
+        "filename": "l1_18_我系学生.mp3",
+        "jyutping": "ngo5 hai6 hok6 saang1",
+        "meaning": "我是学生"
+      },
+      {
+        "id": 19,
+        "text": "你中意咩",
+        "filename": "l1_19_你中意咩.mp3",
+        "jyutping": "nei5 zung1 ji3 me1",
+        "meaning": "你喜欢什么"
+      },
+      {
+        "id": 20,
+        "text": "我好中意你",
+        "filename": "l1_20_我好中意你.mp3",
+        "jyutping": "ngo5 hou2 zung1 ji3 nei5",
+        "meaning": "我很喜欢你"
+      },
+      {
+        "id": 21,
+        "text": "多谢你",
+        "filename": "l1_21_多谢你.mp3",
+        "jyutping": "do1 ze6 nei5",
+        "meaning": "谢谢你"
+      },
+      {
+        "id": 22,
+        "text": "辛苦晒",
+        "filename": "l1_22_辛苦晒.mp3",
+        "jyutping": "san1 fu2 saai3",
+        "meaning": "辛苦了"
+      },
+      {
+        "id": 23,
+        "text": "恭喜发财",
+        "filename": "l1_23_恭喜发财.mp3",
+        "jyutping": "gung1 hei2 faat3 coi4",
+        "meaning": "恭喜发财"
+      },
+      {
+        "id": 24,
+        "text": "新年快乐",
+        "filename": "l1_24_新年快乐.mp3",
+        "jyutping": "san1 nin4 faai3 lok6",
+        "meaning": "新年快乐"
+      },
+      {
+        "id": 25,
+        "text": "生日快乐",
+        "filename": "l1_25_生日快乐.mp3",
+        "jyutping": "saang1 jat6 faai3 lok6",
+        "meaning": "生日快乐"
+      },
+      {
+        "id": 26,
+        "text": "得闲饮茶",
+        "filename": "l1_26_得闲饮茶.mp3",
+        "jyutping": "dak1 haan4 jam2 caa4",
+        "meaning": "有空喝茶"
+      },
+      {
+        "id": 27,
+        "text": "慢慢行",
+        "filename": "l1_27_慢慢行.mp3",
+        "jyutping": "maan6 maan6 haang4",
+        "meaning": "慢走"
+      },
+      {
+        "id": 28,
+        "text": "下次见",
+        "filename": "l1_28_下次见.mp3",
+        "jyutping": "haa6 ci3 gin3",
+        "meaning": "下次见"
+      },
+      {
+        "id": 29,
+        "text": "保持联络",
+        "filename": "l1_29_保持联络.mp3",
+        "jyutping": "bou2 ci4 lyun4 lok3",
+        "meaning": "保持联系"
+      },
+      {
+        "id": 30,
+        "text": "我好开心",
+        "filename": "l1_30_我好开心.mp3",
+        "jyutping": "ngo5 hou2 hoi1 sam1",
+        "meaning": "我很开心"
+      },
+      {
+        "id": 31,
+        "text": "我好兴奋",
+        "filename": "l1_31_我好兴奋.mp3",
+        "jyutping": "ngo5 hou2 hing1 fan5",
+        "meaning": "我很兴奋"
+      },
+      {
+        "id": 32,
+        "text": "我好感动",
+        "filename": "l1_32_我好感动.mp3",
+        "jyutping": "ngo5 hou2 gam2 dung6",
+        "meaning": "我很感动"
+      },
+      {
+        "id": 33,
+        "text": "我好幸福",
+        "filename": "l1_33_我好幸福.mp3",
+        "jyutping": "ngo5 hou2 hang6 fuk1",
+        "meaning": "我很幸福"
+      },
+      {
+        "id": 34,
+        "text": "我好满足",
+        "filename": "l1_34_我好满足.mp3",
+        "jyutping": "ngo5 hou2 mun5 zuk1",
+        "meaning": "我很满足"
+      },
+      {
+        "id": 35,
+        "text": "一齐玩啦",
+        "filename": "l1_35_一齐玩啦.mp3",
+        "jyutping": "jat1 cai4 waan2 laa1",
+        "meaning": "一起玩吧"
+      },
+      {
+        "id": 36,
+        "text": "得闲见",
+        "filename": "l1_36_得闲见.mp3",
+        "jyutping": "dak1 haan4 gin3",
+        "meaning": "有空见"
+      },
+      {
+        "id": 37,
+        "text": "听日见",
+        "filename": "l1_37_听日见.mp3",
+        "jyutping": "ting1 jat6 gin3",
+        "meaning": "明天见"
+      },
+      {
+        "id": 38,
+        "text": "后日见",
+        "filename": "l1_38_后日见.mp3",
+        "jyutping": "hau6 jat6 gin3",
+        "meaning": "后天见"
+      },
+      {
+        "id": 39,
+        "text": "下星期见",
+        "filename": "l1_39_下星期见.mp3",
+        "jyutping": "haa6 sing1 kei4 gin3",
+        "meaning": "下周见"
+      },
+      {
+        "id": 40,
+        "text": "保重身体",
+        "filename": "l1_40_保重身体.mp3",
+        "jyutping": "bou2 zung6 san1 tai2",
+        "meaning": "保重身体"
+      },
+      {
+        "id": 41,
+        "text": "注意安全",
+        "filename": "l1_41_注意安全.mp3",
+        "jyutping": "zyu3 ji3 on1 cyun4",
+        "meaning": "注意安全"
+      },
+      {
+        "id": 42,
+        "text": "一路顺风",
+        "filename": "l1_42_一路顺风.mp3",
+        "jyutping": "jat1 lou6 seon6 fung1",
+        "meaning": "一路顺风"
+      },
+      {
+        "id": 43,
+        "text": "万事如意",
+        "filename": "l1_43_万事如意.mp3",
+        "jyutping": "maan6 si6 jyu4 ji3",
+        "meaning": "万事如意"
+      },
+      {
+        "id": 44,
+        "text": "心想事成",
+        "filename": "l1_44_心想事成.mp3",
+        "jyutping": "sam1 soeng2 si6 sing4",
+        "meaning": "心想事成"
+      },
+      {
+        "id": 45,
+        "text": "身体健康",
+        "filename": "l1_45_身体健康.mp3",
+        "jyutping": "san1 tai2 gin6 hong1",
+        "meaning": "身体健康"
+      },
+      {
+        "id": 46,
+        "text": "工作顺利",
+        "filename": "l1_46_工作顺利.mp3",
+        "jyutping": "gung1 zok3 seon6 lei6",
+        "meaning": "工作顺利"
+      },
+      {
+        "id": 47,
+        "text": "学业进步",
+        "filename": "l1_47_学业进步.mp3",
+        "jyutping": "hok6 jip6 zeon3 bou6",
+        "meaning": "学业进步"
+      },
+      {
+        "id": 48,
+        "text": "青春常驻",
+        "filename": "l1_48_青春常驻.mp3",
+        "jyutping": "cing1 ceon1 soeng4 zyu3",
+        "meaning": "青春常驻"
+      },
+      {
+        "id": 49,
+        "text": "笑口常开",
+        "filename": "l1_49_笑口常开.mp3",
+        "jyutping": "siu3 hau2 soeng4 hoi1",
+        "meaning": "笑口常开"
+      },
+      {
+        "id": 50,
+        "text": "好运连连",
+        "filename": "l1_50_好运连连.mp3",
+        "jyutping": "hou2 wan6 lin4 lin4",
+        "meaning": "好运连连"
+      }
+    ],
+    "2": [
+      {
+        "id": 1,
+        "text": "多谢",
+        "filename": "l2_1_多谢.mp3",
+        "jyutping": "do1 ze6",
+        "meaning": "谢谢"
+      },
+      {
+        "id": 2,
+        "text": "唔该",
+        "filename": "l2_2_唔该.mp3",
+        "jyutping": "m4 goi1",
+        "meaning": "劳驾"
+      },
+      {
+        "id": 3,
+        "text": "对唔住",
+        "filename": "l2_3_对唔住.mp3",
+        "jyutping": "deoi3 m4 zyu6",
+        "meaning": "对不起"
+      },
+      {
+        "id": 4,
+        "text": "唔好意思",
+        "filename": "l2_4_唔好意思.mp3",
+        "jyutping": "m4 hou2 ji3 si1",
+        "meaning": "不好意思"
+      },
+      {
+        "id": 5,
+        "text": "冇问题",
+        "filename": "l2_5_冇问题.mp3",
+        "jyutping": "mou5 man6 tai4",
+        "meaning": "没问题"
+      },
+      {
+        "id": 6,
+        "text": "请",
+        "filename": "l2_6_请.mp3",
+        "jyutping": "ceng2",
+        "meaning": "请"
+      },
+      {
+        "id": 7,
+        "text": "麻烦晒",
+        "filename": "l2_7_麻烦晒.mp3",
+        "jyutping": "maa4 faan4 saai3",
+        "meaning": "麻烦你了"
+      },
+      {
+        "id": 8,
+        "text": "唔紧要",
+        "filename": "l2_8_唔紧要.mp3",
+        "jyutping": "m4 gan2 jiu3",
+        "meaning": "不要紧"
+      },
+      {
+        "id": 9,
+        "text": "得闲",
+        "filename": "l2_9_得闲.mp3",
+        "jyutping": "dak1 haan4",
+        "meaning": "有空"
+      },
+      {
+        "id": 10,
+        "text": "是但",
+        "filename": "l2_10_是但.mp3",
+        "jyutping": "si6 daan6",
+        "meaning": "随便"
+      },
+      {
+        "id": 11,
+        "text": "随便",
+        "filename": "l2_11_随便.mp3",
+        "jyutping": "ceoi4 bin6",
+        "meaning": "随便"
+      },
+      {
+        "id": 12,
+        "text": "你话事",
+        "filename": "l2_12_你话事.mp3",
+        "jyutping": "nei5 waa6 si6",
+        "meaning": "你说了算"
+      },
+      {
+        "id": 13,
+        "text": "我话事",
+        "filename": "l2_13_我话事.mp3",
+        "jyutping": "ngo5 waa6 si6",
+        "meaning": "我说了算"
+      },
+      {
+        "id": 14,
+        "text": "大家话事",
+        "filename": "l2_14_大家话事.mp3",
+        "jyutping": "daai6 gaa1 waa6 si6",
+        "meaning": "大家一起决定"
+      },
+      {
+        "id": 15,
+        "text": "冇所谓",
+        "filename": "l2_15_冇所谓.mp3",
+        "jyutping": "mou5 so2 wai6",
+        "meaning": "无所谓"
+      },
+      {
+        "id": 16,
+        "text": "求其啦",
+        "filename": "l2_16_求其啦.mp3",
+        "jyutping": "kau4 kei4 laa1",
+        "meaning": "随便啦"
+      },
+      {
+        "id": 17,
+        "text": "你决定",
+        "filename": "l2_17_你决定.mp3",
+        "jyutping": "nei5 kyut3 ding6",
+        "meaning": "你决定"
+      },
+      {
+        "id": 18,
+        "text": "我赞成",
+        "filename": "l2_18_我赞成.mp3",
+        "jyutping": "ngo5 zaan3 sing4",
+        "meaning": "我赞成"
+      },
+      {
+        "id": 19,
+        "text": "我反对",
+        "filename": "l2_19_我反对.mp3",
+        "jyutping": "ngo5 faan2 deoi3",
+        "meaning": "我反对"
+      },
+      {
+        "id": 20,
+        "text": "我同意",
+        "filename": "l2_20_我同意.mp3",
+        "jyutping": "ngo5 tung4 ji3",
+        "meaning": "我同意"
+      },
+      {
+        "id": 21,
+        "text": "我拒绝",
+        "filename": "l2_21_我拒绝.mp3",
+        "jyutping": "ngo5 keoi5 zyu6",
+        "meaning": "我拒绝"
+      },
+      {
+        "id": 22,
+        "text": "可以",
+        "filename": "l2_22_可以.mp3",
+        "jyutping": "ho2 ji5",
+        "meaning": "可以"
+      },
+      {
+        "id": 23,
+        "text": "唔可以",
+        "filename": "l2_23_唔可以.mp3",
+        "jyutping": "m4 ho2 ji5",
+        "meaning": "不可以"
+      },
+      {
+        "id": 24,
+        "text": "知道",
+        "filename": "l2_24_知道.mp3",
+        "jyutping": "zi1 dou3",
+        "meaning": "知道"
+      },
+      {
+        "id": 25,
+        "text": "唔知道",
+        "filename": "l2_25_唔知道.mp3",
+        "jyutping": "m4 zi1 dou3",
+        "meaning": "不知道"
+      },
+      {
+        "id": 26,
+        "text": "明白",
+        "filename": "l2_26_明白.mp3",
+        "jyutping": "ming4 baak6",
+        "meaning": "明白"
+      },
+      {
+        "id": 27,
+        "text": "唔明白",
+        "filename": "l2_27_唔明白.mp3",
+        "jyutping": "m4 ming4 baak6",
+        "meaning": "不明白"
+      },
+      {
+        "id": 28,
+        "text": "记得",
+        "filename": "l2_28_记得.mp3",
+        "jyutping": "gei3 dak1",
+        "meaning": "记得"
+      },
+      {
+        "id": 29,
+        "text": "唔记得",
+        "filename": "l2_29_唔记得.mp3",
+        "jyutping": "m4 gei3 dak1",
+        "meaning": "不记得"
+      },
+      {
+        "id": 30,
+        "text": "识得",
+        "filename": "l2_30_识得.mp3",
+        "jyutping": "sik1 dak1",
+        "meaning": "认识"
+      },
+      {
+        "id": 31,
+        "text": "唔识得",
+        "filename": "l2_31_唔识得.mp3",
+        "jyutping": "m4 sik1 dak1",
+        "meaning": "不认识"
+      },
+      {
+        "id": 32,
+        "text": "识做",
+        "filename": "l2_32_识做.mp3",
+        "jyutping": "sik1 zou6",
+        "meaning": "会做"
+      },
+      {
+        "id": 33,
+        "text": "唔识做",
+        "filename": "l2_33_唔识做.mp3",
+        "jyutping": "m4 sik1 zou6",
+        "meaning": "不会做"
+      },
+      {
+        "id": 34,
+        "text": "识听",
+        "filename": "l2_34_识听.mp3",
+        "jyutping": "sik1 ting1",
+        "meaning": "听得懂"
+      },
+      {
+        "id": 35,
+        "text": "唔识听",
+        "filename": "l2_35_唔识听.mp3",
+        "jyutping": "m4 sik1 ting1",
+        "meaning": "听不懂"
+      },
+      {
+        "id": 36,
+        "text": "识讲",
+        "filename": "l2_36_识讲.mp3",
+        "jyutping": "sik1 gong2",
+        "meaning": "会说"
+      },
+      {
+        "id": 37,
+        "text": "唔识讲",
+        "filename": "l2_37_唔识讲.mp3",
+        "jyutping": "m4 sik1 gong2",
+        "meaning": "不会说"
+      },
+      {
+        "id": 38,
+        "text": "你讲得啱",
+        "filename": "l2_38_你讲得啱.mp3",
+        "jyutping": "nei5 gong2 dak1 aam1",
+        "meaning": "你说得对"
+      },
+      {
+        "id": 39,
+        "text": "我同意你",
+        "filename": "l2_39_我同意你.mp3",
+        "jyutping": "ngo5 tung4 ji3 nei5",
+        "meaning": "我同意你"
+      },
+      {
+        "id": 40,
+        "text": "你讲得冇错",
+        "filename": "l2_40_你讲得冇错.mp3",
+        "jyutping": "nei5 gong2 dak1 mou5 co3",
+        "meaning": "你说得没错"
+      },
+      {
+        "id": 41,
+        "text": "你讲得啱晒",
+        "filename": "l2_41_你讲得啱晒.mp3",
+        "jyutping": "nei5 gong2 dak1 aam1 saai3",
+        "meaning": "你说得全对"
+      },
+      {
+        "id": 42,
+        "text": "有道理",
+        "filename": "l2_42_有道理.mp3",
+        "jyutping": "jau5 dou6 lei5",
+        "meaning": "有道理"
+      },
+      {
+        "id": 43,
+        "text": "原来如此",
+        "filename": "l2_43_原来如此.mp3",
+        "jyutping": "jyun4 loi4 jyu4 ci2",
+        "meaning": "原来如此"
+      },
+      {
+        "id": 44,
+        "text": "怪唔之得",
+        "filename": "l2_44_怪唔之得.mp3",
+        "jyutping": "gwaai3 m4 zi1 dak1",
+        "meaning": "怪不得"
+      },
+      {
+        "id": 45,
+        "text": "原来系咁",
+        "filename": "l2_45_原来系咁.mp3",
+        "jyutping": "jyun4 loi4 hai6 gam2",
+        "meaning": "原来是这样"
+      },
+      {
+        "id": 46,
+        "text": "我都系咁话",
+        "filename": "l2_46_我都系咁话.mp3",
+        "jyutping": "ngo5 dou1 hai6 gam2 waa6",
+        "meaning": "我也这么认为"
+      },
+      {
+        "id": 47,
+        "text": "英雄所见略同",
+        "filename": "l2_47_英雄所见略同.mp3",
+        "jyutping": "jing1 hung4 so2 gin3 loek6 tung4",
+        "meaning": "英雄所见略同"
+      },
+      {
+        "id": 48,
+        "text": "冇错",
+        "filename": "l2_48_冇错.mp3",
+        "jyutping": "mou5 co3",
+        "meaning": "没错"
+      },
+      {
+        "id": 49,
+        "text": "绝对系",
+        "filename": "l2_49_绝对系.mp3",
+        "jyutping": "zyut6 deoi3 hai6",
+        "meaning": "绝对是"
+      },
+      {
+        "id": 50,
+        "text": "肯定系",
+        "filename": "l2_50_肯定系.mp3",
+        "jyutping": "hang2 ding6 hai6",
+        "meaning": "肯定是"
+      }
+    ],
+    "3": [
+      {
+        "id": 1,
+        "text": "食咗饭未",
+        "filename": "l3_1_食咗饭未.mp3",
+        "jyutping": "sik6 zo2 faan6 mei6",
+        "meaning": "吃饭了吗"
+      },
+      {
+        "id": 2,
+        "text": "我想点菜",
+        "filename": "l3_2_我想点菜.mp3",
+        "jyutping": "ngo5 soeng2 dim2 coi3",
+        "meaning": "我想点菜"
+      },
+      {
+        "id": 3,
+        "text": "唔该俾张菜单",
+        "filename": "l3_3_唔该俾张菜单.mp3",
+        "jyutping": "m4 goi1 bei2 zoeng1 caai3 daan1",
+        "meaning": "请给我菜单"
+      },
+      {
+        "id": 4,
+        "text": "有冇推荐",
+        "filename": "l3_4_有冇推荐.mp3",
+        "jyutping": "jau5 mou5 teoi1 zin3",
+        "meaning": "有推荐吗"
+      },
+      {
+        "id": 5,
+        "text": "我要一杯奶茶",
+        "filename": "l3_5_我要一杯奶茶.mp3",
+        "jyutping": "ngo5 jiu3 jat1 bui1 naai5 caa4",
+        "meaning": "我要一杯奶茶"
+      },
+      {
+        "id": 6,
+        "text": "冻饮",
+        "filename": "l3_6_冻饮.mp3",
+        "jyutping": "dung3 jam2",
+        "meaning": "冷饮"
+      },
+      {
+        "id": 7,
+        "text": "热饮",
+        "filename": "l3_7_热饮.mp3",
+        "jyutping": "jit6 jam2",
+        "meaning": "热饮"
+      },
+      {
+        "id": 8,
+        "text": "打包",
+        "filename": "l3_8_打包.mp3",
+        "jyutping": "daa2 baau1",
+        "meaning": "打包"
+      },
+      {
+        "id": 9,
+        "text": "堂食",
+        "filename": "l3_9_堂食.mp3",
+        "jyutping": "tong4 sik6",
+        "meaning": "堂食"
+      },
+      {
+        "id": 10,
+        "text": "几多钱",
+        "filename": "l3_10_几多钱.mp3",
+        "jyutping": "gei2 do1 cin2",
+        "meaning": "多少钱"
+      },
+      {
+        "id": 11,
+        "text": "埋单",
+        "filename": "l3_11_埋单.mp3",
+        "jyutping": "maai4 daan1",
+        "meaning": "买单"
+      },
+      {
+        "id": 12,
+        "text": "好食",
+        "filename": "l3_12_好食.mp3",
+        "jyutping": "hou2 sik6",
+        "meaning": "好吃"
+      },
+      {
+        "id": 13,
+        "text": "好好味",
+        "filename": "l3_13_好好味.mp3",
+        "jyutping": "hou2 hou2 mei6",
+        "meaning": "很好吃"
+      },
+      {
+        "id": 14,
+        "text": "太咸",
+        "filename": "l3_14_太咸.mp3",
+        "jyutping": "taai3 haam4",
+        "meaning": "太咸"
+      },
+      {
+        "id": 15,
+        "text": "太甜",
+        "filename": "l3_15_太甜.mp3",
+        "jyutping": "taai3 tim4",
+        "meaning": "太甜"
+      },
+      {
+        "id": 16,
+        "text": "太辣",
+        "filename": "l3_16_太辣.mp3",
+        "jyutping": "taai3 laat6",
+        "meaning": "太辣"
+      },
+      {
+        "id": 17,
+        "text": "太酸",
+        "filename": "l3_17_太酸.mp3",
+        "jyutping": "taai3 syun1",
+        "meaning": "太酸"
+      },
+      {
+        "id": 18,
+        "text": "太苦",
+        "filename": "l3_18_太苦.mp3",
+        "jyutping": "taai3 fu2",
+        "meaning": "太苦"
+      },
+      {
+        "id": 19,
+        "text": "淡咗啲",
+        "filename": "l3_19_淡咗啲.mp3",
+        "jyutping": "taam5 zo2 di1",
+        "meaning": "淡了一点"
+      },
+      {
+        "id": 20,
+        "text": "咸咗啲",
+        "filename": "l3_20_咸咗啲.mp3",
+        "jyutping": "haam4 zo2 di1",
+        "meaning": "咸了一点"
+      },
+      {
+        "id": 21,
+        "text": "甜咗啲",
+        "filename": "l3_21_甜咗啲.mp3",
+        "jyutping": "tim4 zo2 di1",
+        "meaning": "甜了一点"
+      },
+      {
+        "id": 22,
+        "text": "辣咗啲",
+        "filename": "l3_22_辣咗啲.mp3",
+        "jyutping": "laat6 zo2 di1",
+        "meaning": "辣了一点"
+      },
+      {
+        "id": 23,
+        "text": "我想要碗云吞面",
+        "filename": "l3_23_我想要碗云吞面.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 wun2 wan4 tan1 min6",
+        "meaning": "我想要碗云吞面"
+      },
+      {
+        "id": 24,
+        "text": "我想要碗牛腩面",
+        "filename": "l3_24_我想要碗牛腩面.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 wun2 ngau4 naam5 min6",
+        "meaning": "我想要碗牛腩面"
+      },
+      {
+        "id": 25,
+        "text": "我想要碗叉烧饭",
+        "filename": "l3_25_我想要碗叉烧饭.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 wun2 caa1 siu1 faan6",
+        "meaning": "我想要碗叉烧饭"
+      },
+      {
+        "id": 26,
+        "text": "我想要碟炒牛河",
+        "filename": "l3_26_我想要碟炒牛河.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 dip6 caau2 ngau4 ho4",
+        "meaning": "我想要碟炒牛河"
+      },
+      {
+        "id": 27,
+        "text": "我想要笼虾饺",
+        "filename": "l3_27_我想要笼虾饺.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 lung4 haa1 gaau2",
+        "meaning": "我想要笼虾饺"
+      },
+      {
+        "id": 28,
+        "text": "我想要笼烧卖",
+        "filename": "l3_28_我想要笼烧卖.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 lung4 siu1 maai6",
+        "meaning": "我想要笼烧卖"
+      },
+      {
+        "id": 29,
+        "text": "我想要碗白饭",
+        "filename": "l3_29_我想要碗白饭.mp3",
+        "jyutping": "ngo5 soeng2 jiu3 wun2 baak6 faan6",
+        "meaning": "我想要碗白饭"
+      },
+      {
+        "id": 30,
+        "text": "加底",
+        "filename": "l3_30_加底.mp3",
+        "jyutping": "gaa1 dai2",
+        "meaning": "加量"
+      },
+      {
+        "id": 31,
+        "text": "少饭",
+        "filename": "l3_31_少饭.mp3",
+        "jyutping": "siu2 faan6",
+        "meaning": "少饭"
+      },
+      {
+        "id": 32,
+        "text": "多葱",
+        "filename": "l3_32_多葱.mp3",
+        "jyutping": "do1 cung1",
+        "meaning": "多葱"
+      },
+      {
+        "id": 33,
+        "text": "少葱",
+        "filename": "l3_33_少葱.mp3",
+        "jyutping": "siu2 cung1",
+        "meaning": "少葱"
+      },
+      {
+        "id": 34,
+        "text": "走葱",
+        "filename": "l3_34_走葱.mp3",
+        "jyutping": "zau2 cung1",
+        "meaning": "不要葱"
+      },
+      {
+        "id": 35,
+        "text": "走青",
+        "filename": "l3_35_走青.mp3",
+        "jyutping": "zau2 ceng1",
+        "meaning": "不要香菜"
+      },
+      {
+        "id": 36,
+        "text": "多汁",
+        "filename": "l3_36_多汁.mp3",
+        "jyutping": "do1 zap1",
+        "meaning": "多汁"
+      },
+      {
+        "id": 37,
+        "text": "少油",
+        "filename": "l3_37_少油.mp3",
+        "jyutping": "siu2 jau4",
+        "meaning": "少油"
+      },
+      {
+        "id": 38,
+        "text": "唔该加水",
+        "filename": "l3_38_唔该加水.mp3",
+        "jyutping": "m4 goi1 gaa1 seoi2",
+        "meaning": "请加水"
+      },
+      {
+        "id": 39,
+        "text": "可以上菜未",
+        "filename": "l3_39_可以上菜未.mp3",
+        "jyutping": "ho2 ji5 soeng5 coi3 mei6",
+        "meaning": "可以上菜了吗"
+      },
+      {
+        "id": 40,
+        "text": "催一催单",
+        "filename": "l3_40_催一催单.mp3",
+        "jyutping": "ceoi1 jat1 ceoi1 daan1",
+        "meaning": "催一下单"
+      },
+      {
+        "id": 41,
+        "text": "有冇WiFi",
+        "filename": "l3_41_有冇WiFi.mp3",
+        "jyutping": "jau5 mou5 WiFi",
+        "meaning": "有WiFi吗"
+      },
+      {
+        "id": 42,
+        "text": "密码系咩",
+        "filename": "l3_42_密码系咩.mp3",
+        "jyutping": "mat6 maa5 hai6 me1",
+        "meaning": "密码是什么"
+      },
+      {
+        "id": 43,
+        "text": "可以支付宝吗",
+        "filename": "l3_43_可以支付宝吗.mp3",
+        "jyutping": "ho2 ji5 zi1 fuu3 bou2 maa3",
+        "meaning": "可以用支付宝吗"
+      },
+      {
+        "id": 44,
+        "text": "可以微信支付吗",
+        "filename": "l3_44_可以微信支付吗.mp3",
+        "jyutping": "ho2 ji5 mei4 seon3 zi1 fuu3 maa3",
+        "meaning": "可以用微信支付吗"
+      },
+      {
+        "id": 45,
+        "text": "收现金",
+        "filename": "l3_45_收现金.mp3",
+        "jyutping": "sau1 jin6 gam1",
+        "meaning": "收现金"
+      },
+      {
+        "id": 46,
+        "text": "有冇发票",
+        "filename": "l3_46_有冇发票.mp3",
+        "jyutping": "jau5 mou5 faat3 piu3",
+        "meaning": "有发票吗"
+      },
+      {
+        "id": 47,
+        "text": "可唔可以打包",
+        "filename": "l3_47_可唔可以打包.mp3",
+        "jyutping": "ho2 m4 ho2 ji5 daa2 baau1",
+        "meaning": "可以打包吗"
+      },
+      {
+        "id": 48,
+        "text": "唔该帮我打包",
+        "filename": "l3_48_唔该帮我打包.mp3",
+        "jyutping": "m4 goi1 bong1 ngo5 daa2 baau1",
+        "meaning": "请帮我打包"
+      }
+    ],
+    "4": [
+      {
+        "id": 1,
+        "text": "几多钱",
+        "filename": "l4_1_几多钱.mp3",
+        "jyutping": "gei2 do1 cin2",
+        "meaning": "多少钱"
+      },
+      {
+        "id": 2,
+        "text": "太贵啦",
+        "filename": "l4_2_太贵啦.mp3",
+        "jyutping": "taai3 gwai3 laa1",
+        "meaning": "太贵了"
+      },
+      {
+        "id": 3,
+        "text": "平啲啦",
+        "filename": "l4_3_平啲啦.mp3",
+        "jyutping": "peng4 di1 laa1",
+        "meaning": "便宜点吧"
+      },
+      {
+        "id": 4,
+        "text": "我要呢个",
+        "filename": "l4_4_我要呢个.mp3",
+        "jyutping": "ngo5 jiu3 nei1 go3",
+        "meaning": "我要这个"
+      },
+      {
+        "id": 5,
+        "text": "俾我睇下",
+        "filename": "l4_5_俾我睇下.mp3",
+        "jyutping": "bei2 ngo5 tai2 haa5",
+        "meaning": "给我看一下"
+      },
+      {
+        "id": 6,
+        "text": "有冇大码",
+        "filename": "l4_6_有冇大码.mp3",
+        "jyutping": "jau5 mou5 daai6 maa5",
+        "meaning": "有大码吗"
+      },
+      {
+        "id": 7,
+        "text": "有冇细码",
+        "filename": "l4_7_有冇细码.mp3",
+        "jyutping": "jau5 mou5 sai3 maa5",
+        "meaning": "有小码吗"
+      },
+      {
+        "id": 8,
+        "text": "可以试下吗",
+        "filename": "l4_8_可以试下吗.mp3",
+        "jyutping": "ho2 ji5 si3 haa5 maa3",
+        "meaning": "可以试穿吗"
+      },
+      {
+        "id": 9,
+        "text": "试衣室喺边度",
+        "filename": "l4_9_试衣室喺边度.mp3",
+        "jyutping": "si3 ji1 sat1 hai2 bin1 dou6",
+        "meaning": "试衣间在哪里"
+      },
+      {
+        "id": 10,
+        "text": "唔要",
+        "filename": "l4_10_唔要.mp3",
+        "jyutping": "m4 jiu3",
+        "meaning": "不要"
+      },
+      {
+        "id": 11,
+        "text": "就要呢个",
+        "filename": "l4_11_就要呢个.mp3",
+        "jyutping": "zau6 jiu3 nei1 go3",
+        "meaning": "就要这个"
+      },
+      {
+        "id": 12,
+        "text": "有冇折扣",
+        "filename": "l4_12_有冇折扣.mp3",
+        "jyutping": "jau5 mou5 zit3 kau3",
+        "meaning": "有折扣吗"
+      },
+      {
+        "id": 13,
+        "text": "打几多折",
+        "filename": "l4_13_打几多折.mp3",
+        "jyutping": "daa2 gei2 do1 zit3",
+        "meaning": "打几折"
+      },
+      {
+        "id": 14,
+        "text": "有冇优惠",
+        "filename": "l4_14_有冇优惠.mp3",
+        "jyutping": "jau5 mou5 jau1 wai6",
+        "meaning": "有优惠吗"
+      },
+      {
+        "id": 15,
+        "text": "呢个款式好靓",
+        "filename": "l4_15_呢个款式好靓.mp3",
+        "jyutping": "nei1 go3 fun2 sik1 hou2 leng3",
+        "meaning": "这个款式很漂亮"
+      },
+      {
+        "id": 16,
+        "text": "呢个颜色好衬我",
+        "filename": "l4_16_呢个颜色好衬我.mp3",
+        "jyutping": "nei1 go3 ngaan4 sik1 hou2 can3 ngo5",
+        "meaning": "这个颜色很适合我"
+      },
+      {
+        "id": 17,
+        "text": "有冇其他颜色",
+        "filename": "l4_17_有冇其他颜色.mp3",
+        "jyutping": "jau5 mou5 kei4 taa1 ngaan4 sik1",
+        "meaning": "有其他颜色吗"
+      },
+      {
+        "id": 18,
+        "text": "有冇其他款式",
+        "filename": "l4_18_有冇其他款式.mp3",
+        "jyutping": "jau5 mou5 kei4 taa1 fun2 sik1",
+        "meaning": "有其他款式吗"
+      },
+      {
+        "id": 19,
+        "text": "呢个太细",
+        "filename": "l4_19_呢个太细.mp3",
+        "jyutping": "nei1 go3 taai3 sai3",
+        "meaning": "这个太小"
+      },
+      {
+        "id": 20,
+        "text": "呢个太大",
+        "filename": "l4_20_呢个太大.mp3",
+        "jyutping": "nei1 go3 taai3 daai6",
+        "meaning": "这个太大"
+      },
+      {
+        "id": 21,
+        "text": "呢个啱啱好",
+        "filename": "l4_21_呢个啱啱好.mp3",
+        "jyutping": "nei1 go3 aam1 aam1 hou2",
+        "meaning": "这个刚刚好"
+      },
+      {
+        "id": 22,
+        "text": "可以换货吗",
+        "filename": "l4_22_可以换货吗.mp3",
+        "jyutping": "ho2 ji5 wun6 fo3 maa3",
+        "meaning": "可以换货吗"
+      },
+      {
+        "id": 23,
+        "text": "可以退货吗",
+        "filename": "l4_23_可以退货吗.mp3",
+        "jyutping": "ho2 ji5 teoi3 fo3 maa3",
+        "meaning": "可以退货吗"
+      },
+      {
+        "id": 24,
+        "text": "有冇保养",
+        "filename": "l4_24_有冇保养.mp3",
+        "jyutping": "jau5 mou5 bou2 joeng5",
+        "meaning": "有保修吗"
+      },
+      {
+        "id": 25,
+        "text": "买二送一",
+        "filename": "l4_25_买二送一.mp3",
+        "jyutping": "maai5 ji6 sung3 jat1",
+        "meaning": "买二送一"
+      },
+      {
+        "id": 26,
+        "text": "买三送一",
+        "filename": "l4_26_买三送一.mp3",
+        "jyutping": "maai5 saam1 sung3 jat1",
+        "meaning": "买三送一"
+      },
+      {
+        "id": 27,
+        "text": "买满五百蚊有礼物",
+        "filename": "l4_27_买满五百蚊有礼物.mp3",
+        "jyutping": "maai5 mun5 ng5 baak3 man1 jau5 lai5 mat6",
+        "meaning": "满五百元有礼物"
+      },
+      {
+        "id": 28,
+        "text": "呢个系咩材料",
+        "filename": "l4_28_呢个系咩材料.mp3",
+        "jyutping": "nei1 go3 hai6 me1 coi4 liu2",
+        "meaning": "这是什么材料"
+      },
+      {
+        "id": 29,
+        "text": "呢个系咪真皮",
+        "filename": "l4_29_呢个系咪真皮.mp3",
+        "jyutping": "nei1 go3 hai6 mai6 zan1 pei4",
+        "meaning": "这是真皮吗"
+      },
+      {
+        "id": 30,
+        "text": "呢个系咪纯棉",
+        "filename": "l4_30_呢个系咪纯棉.mp3",
+        "jyutping": "nei1 go3 hai6 mai6 seon4 min4",
+        "meaning": "这是纯棉吗"
+      },
+      {
+        "id": 31,
+        "text": "可以平啲吗",
+        "filename": "l4_31_可以平啲吗.mp3",
+        "jyutping": "ho2 ji5 peng4 di1 maa3",
+        "meaning": "可以便宜点吗"
+      },
+      {
+        "id": 32,
+        "text": "最平几多",
+        "filename": "l4_32_最平几多.mp3",
+        "jyutping": "zeoi3 peng4 gei2 do1",
+        "meaning": "最便宜多少"
+      },
+      {
+        "id": 33,
+        "text": "最贵几多",
+        "filename": "l4_33_最贵几多.mp3",
+        "jyutping": "zeoi3 gwai3 gei2 do1",
+        "meaning": "最贵多少"
+      },
+      {
+        "id": 34,
+        "text": "有冇学生优惠",
+        "filename": "l4_34_有冇学生优惠.mp3",
+        "jyutping": "jau5 mou5 hok6 saang1 jau1 wai6",
+        "meaning": "有学生优惠吗"
+      },
+      {
+        "id": 35,
+        "text": "有冇会员优惠",
+        "filename": "l4_35_有冇会员优惠.mp3",
+        "jyutping": "jau5 mou5 wui6 jyun4 jau1 wai6",
+        "meaning": "有会员优惠吗"
+      },
+      {
+        "id": 36,
+        "text": "点样成为会员",
+        "filename": "l4_36_点样成为会员.mp3",
+        "jyutping": "dim2 joeng2 sing4 wai4 wui6 jyun4",
+        "meaning": "怎样成为会员"
+      },
+      {
+        "id": 37,
+        "text": "可以用信用卡吗",
+        "filename": "l4_37_可以用信用卡吗.mp3",
+        "jyutping": "ho2 ji5 jung6 seon3 jung6 kaa1 maa3",
+        "meaning": "可以用信用卡吗"
+      },
+      {
+        "id": 38,
+        "text": "可以分期吗",
+        "filename": "l4_38_可以分期吗.mp3",
+        "jyutping": "ho2 ji5 fan1 kei4 maa3",
+        "meaning": "可以分期吗"
+      },
+      {
+        "id": 39,
+        "text": "收唔收支付宝",
+        "filename": "l4_39_收唔收支付宝.mp3",
+        "jyutping": "sau1 m4 sau1 zi1 fuu3 bou2",
+        "meaning": "收不收支付宝"
+      },
+      {
+        "id": 40,
+        "text": "收唔收微信支付",
+        "filename": "l4_40_收唔收微信支付.mp3",
+        "jyutping": "sau1 m4 sau1 mei4 seon3 zi1 fuu3",
+        "meaning": "收不收微信支付"
+      },
+      {
+        "id": 41,
+        "text": "可以开单吗",
+        "filename": "l4_41_可以开单吗.mp3",
+        "jyutping": "ho2 ji5 hoi1 daan1 maa3",
+        "meaning": "可以开单吗"
+      },
+      {
+        "id": 42,
+        "text": "可以俾张收据我吗",
+        "filename": "l4_42_可以俾张收据我吗.mp3",
+        "jyutping": "ho2 ji5 bei2 zoeng1 sau1 geoi3 ngo5 maa3",
+        "meaning": "可以给我收据吗"
+      },
+      {
+        "id": 43,
+        "text": "我想退货",
+        "filename": "l4_43_我想退货.mp3",
+        "jyutping": "ngo5 soeng2 teoi3 fo3",
+        "meaning": "我想退货"
+      },
+      {
+        "id": 44,
+        "text": "我想换货",
+        "filename": "l4_44_我想换货.mp3",
+        "jyutping": "ngo5 soeng2 wun6 fo3",
+        "meaning": "我想换货"
+      },
+      {
+        "id": 45,
+        "text": "我想退款",
+        "filename": "l4_45_我想退款.mp3",
+        "jyutping": "ngo5 soeng2 teoi3 faan2",
+        "meaning": "我想退款"
+      },
+      {
+        "id": 46,
+        "text": "投诉电话系几多",
+        "filename": "l4_46_投诉电话系几多.mp3",
+        "jyutping": "tau4 sou3 din6 waa2 hai6 gei2 do1",
+        "meaning": "投诉电话是多少"
+      },
+      {
+        "id": 47,
+        "text": "我要见经理",
+        "filename": "l4_47_我要见经理.mp3",
+        "jyutping": "ngo5 jiu3 gin3 ging1 lei5",
+        "meaning": "我要见经理"
+      },
+      {
+        "id": 48,
+        "text": "服务态度好差",
+        "filename": "l4_48_服务态度好差.mp3",
+        "jyutping": "fuk6 mou6 taai3 dou6 hou2 caa1",
+        "meaning": "服务态度很差"
+      },
+      {
+        "id": 49,
+        "text": "我会俾差评",
+        "filename": "l4_49_我会俾差评.mp3",
+        "jyutping": "ngo5 wui5 bei2 caa1 ping4",
+        "meaning": "我会给差评"
+      },
+      {
+        "id": 50,
+        "text": "下次唔会再嚟",
+        "filename": "l4_50_下次唔会再嚟.mp3",
+        "jyutping": "haa6 ci3 m4 wui5 zoi3 lei4",
+        "meaning": "下次不会再来了"
+      }
+    ],
+    "5": [
+      {
+        "id": 1,
+        "text": "巴士站喺边度",
+        "filename": "l5_1_巴士站喺边度.mp3",
+        "jyutping": "baa1 si6 zaam6 hai2 bin1 dou6",
+        "meaning": "巴士站在哪里"
+      },
+      {
+        "id": 2,
+        "text": "地铁站喺边度",
+        "filename": "l5_2_地铁站喺边度.mp3",
+        "jyutping": "dei6 tit3 zaam6 hai2 bin1 dou6",
+        "meaning": "地铁站在哪里"
+      },
+      {
+        "id": 3,
+        "text": "的士站喺边度",
+        "filename": "l5_3_的士站喺边度.mp3",
+        "jyutping": "dik1 si6 zaam6 hai2 bin1 dou6",
+        "meaning": "出租车站在哪里"
+      },
+      {
+        "id": 4,
+        "text": "搭地铁去中环",
+        "filename": "l5_4_搭地铁去中环.mp3",
+        "jyutping": "daap3 dei6 tit3 heoi3 zung1 waan4",
+        "meaning": "坐地铁去中环"
+      },
+      {
+        "id": 5,
+        "text": "搭巴士去尖沙咀",
+        "filename": "l5_5_搭巴士去尖沙咀.mp3",
+        "jyutping": "daap3 baa1 si6 heoi3 zim1 saa1 zeoi2",
+        "meaning": "坐巴士去尖沙咀"
+      },
+      {
+        "id": 6,
+        "text": "搭的士去机场",
+        "filename": "l5_6_搭的士去机场.mp3",
+        "jyutping": "daap3 dik1 si6 heoi3 gei1 coeng4",
+        "meaning": "坐出租车去机场"
+      },
+      {
+        "id": 7,
+        "text": "呢度落车",
+        "filename": "l5_7_呢度落车.mp3",
+        "jyutping": "nei1 dou6 lok6 ce1",
+        "meaning": "这里下车"
+      },
+      {
+        "id": 8,
+        "text": "下一个站落车",
+        "filename": "l5_8_下一个站落车.mp3",
+        "jyutping": "haa6 jat1 go3 zaam6 lok6 ce1",
+        "meaning": "下一站下车"
+      },
+      {
+        "id": 9,
+        "text": "转巴士",
+        "filename": "l5_9_转巴士.mp3",
+        "jyutping": "zyun3 baa1 si6",
+        "meaning": "转巴士"
+      },
+      {
+        "id": 10,
+        "text": "转地铁",
+        "filename": "l5_10_转地铁.mp3",
+        "jyutping": "zyun3 dei6 tit3",
+        "meaning": "转地铁"
+      },
+      {
+        "id": 11,
+        "text": "搭的士",
+        "filename": "l5_11_搭的士.mp3",
+        "jyutping": "daap3 dik1 si6",
+        "meaning": "坐出租车"
+      },
+      {
+        "id": 12,
+        "text": "行路",
+        "filename": "l5_12_行路.mp3",
+        "jyutping": "haang4 lou6",
+        "meaning": "走路"
+      },
+      {
+        "id": 13,
+        "text": "踩单车",
+        "filename": "l5_13_踩单车.mp3",
+        "jyutping": "caai2 daan1 ce1",
+        "meaning": "骑自行车"
+      },
+      {
+        "id": 14,
+        "text": "搭船",
+        "filename": "l5_14_搭船.mp3",
+        "jyutping": "daap3 syun4",
+        "meaning": "坐船"
+      },
+      {
+        "id": 15,
+        "text": "搭飞机",
+        "filename": "l5_15_搭飞机.mp3",
+        "jyutping": "daap3 fei1 gei1",
+        "meaning": "坐飞机"
+      },
+      {
+        "id": 16,
+        "text": "八达通",
+        "filename": "l5_16_八达通.mp3",
+        "jyutping": "baat3 daat6 tung1",
+        "meaning": "八达通卡"
+      },
+      {
+        "id": 17,
+        "text": "扫码",
+        "filename": "l5_17_扫码.mp3",
+        "jyutping": "soeng1 maa5",
+        "meaning": "扫码"
+      },
+      {
+        "id": 18,
+        "text": "拍卡",
+        "filename": "l5_18_拍卡.mp3",
+        "jyutping": "paak3 kaa1",
+        "meaning": "刷卡"
+      },
+      {
+        "id": 19,
+        "text": "入钱",
+        "filename": "l5_19_入钱.mp3",
+        "jyutping": "jap6 cin2",
+        "meaning": "投币"
+      },
+      {
+        "id": 20,
+        "text": "买飞",
+        "filename": "l5_20_买飞.mp3",
+        "jyutping": "maai5 fei1",
+        "meaning": "买票"
+      },
+      {
+        "id": 21,
+        "text": "单程票",
+        "filename": "l5_21_单程票.mp3",
+        "jyutping": "daan1 cing4 piu3",
+        "meaning": "单程票"
+      },
+      {
+        "id": 22,
+        "text": "来回票",
+        "filename": "l5_22_来回票.mp3",
+        "jyutping": "loi4 wui4 piu3",
+        "meaning": "往返票"
+      },
+      {
+        "id": 23,
+        "text": "月票",
+        "filename": "l5_23_月票.mp3",
+        "jyutping": "jyut6 piu3",
+        "meaning": "月票"
+      },
+      {
+        "id": 24,
+        "text": "学生票",
+        "filename": "l5_24_学生票.mp3",
+        "jyutping": "hok6 saang1 piu3",
+        "meaning": "学生票"
+      },
+      {
+        "id": 25,
+        "text": "长者票",
+        "filename": "l5_25_长者票.mp3",
+        "jyutping": "zoeng2 ze2 piu3",
+        "meaning": "老年票"
+      },
+      {
+        "id": 26,
+        "text": "头等舱",
+        "filename": "l5_26_头等舱.mp3",
+        "jyutping": "tau4 dang2 cong1",
+        "meaning": "头等舱"
+      },
+      {
+        "id": 27,
+        "text": "经济舱",
+        "filename": "l5_27_经济舱.mp3",
+        "jyutping": "ging1 zai3 cong1",
+        "meaning": "经济舱"
+      },
+      {
+        "id": 28,
+        "text": "商务舱",
+        "filename": "l5_28_商务舱.mp3",
+        "jyutping": "soeng1 mou6 cong1",
+        "meaning": "商务舱"
+      },
+      {
+        "id": 29,
+        "text": "靠窗位",
+        "filename": "l5_29_靠窗位.mp3",
+        "jyutping": "kaau3 coeng1 wai2",
+        "meaning": "靠窗位置"
+      },
+      {
+        "id": 30,
+        "text": "走廊位",
+        "filename": "l5_30_走廊位.mp3",
+        "jyutping": "zau2 long4 wai2",
+        "meaning": "过道位置"
+      },
+      {
+        "id": 31,
+        "text": "几多号巴士",
+        "filename": "l5_31_几多号巴士.mp3",
+        "jyutping": "gei2 do1 hou6 baa1 si6",
+        "meaning": "几路巴士"
+      },
+      {
+        "id": 32,
+        "text": "几多号地铁",
+        "filename": "l5_32_几多号地铁.mp3",
+        "jyutping": "gei2 do1 hou6 dei6 tit3",
+        "meaning": "几号线地铁"
+      },
+      {
+        "id": 33,
+        "text": "头班车几点",
+        "filename": "l5_33_头班车几点.mp3",
+        "jyutping": "tau4 baan1 ce1 gei2 dim2",
+        "meaning": "首班车几点"
+      },
+      {
+        "id": 34,
+        "text": "尾班车几点",
+        "filename": "l5_34_尾班车几点.mp3",
+        "jyutping": "mei5 baan1 ce1 gei2 dim2",
+        "meaning": "末班车几点"
+      },
+      {
+        "id": 35,
+        "text": "几耐一班车",
+        "filename": "l5_35_几耐一班车.mp3",
+        "jyutping": "gei2 noi6 jat1 baan1 ce1",
+        "meaning": "多久一班车"
+      },
+      {
+        "id": 36,
+        "text": "会唔会迟到",
+        "filename": "l5_36_会唔会迟到.mp3",
+        "jyutping": "wui5 m4 wui5 ci4 dou3",
+        "meaning": "会不会迟到"
+      },
+      {
+        "id": 37,
+        "text": "要几耐到",
+        "filename": "l5_37_要几耐到.mp3",
+        "jyutping": "jiu3 gei2 noi6 dou3",
+        "meaning": "要多久到"
+      },
+      {
+        "id": 38,
+        "text": "赶时间",
+        "filename": "l5_38_赶时间.mp3",
+        "jyutping": "gon2 si4 gaan3",
+        "meaning": "赶时间"
+      },
+      {
+        "id": 39,
+        "text": "塞车",
+        "filename": "l5_39_塞车.mp3",
+        "jyutping": "sak1 ce1",
+        "meaning": "堵车"
+      },
+      {
+        "id": 40,
+        "text": "交通意外",
+        "filename": "l5_40_交通意外.mp3",
+        "jyutping": "gaau1 tung1 ji3 ngoi6",
+        "meaning": "交通事故"
+      },
+      {
+        "id": 41,
+        "text": "改道",
+        "filename": "l5_41_改道.mp3",
+        "jyutping": "goi2 dou6",
+        "meaning": "改道"
+      },
+      {
+        "id": 42,
+        "text": "封路",
+        "filename": "l5_42_封路.mp3",
+        "jyutping": "fung1 lou6",
+        "meaning": "封路"
+      },
+      {
+        "id": 43,
+        "text": "修路",
+        "filename": "l5_43_修路.mp3",
+        "jyutping": "sau1 lou6",
+        "meaning": "修路"
+      },
+      {
+        "id": 44,
+        "text": "小心车辆",
+        "filename": "l5_44_小心车辆.mp3",
+        "jyutping": "siu2 sam1 ce1 loeng2",
+        "meaning": "小心车辆"
+      },
+      {
+        "id": 45,
+        "text": "睇红绿灯",
+        "filename": "l5_45_睇红绿灯.mp3",
+        "jyutping": "tai2 hung4 luk6 dang1",
+        "meaning": "看红绿灯"
+      },
+      {
+        "id": 46,
+        "text": "行人过路线",
+        "filename": "l5_46_行人过路线.mp3",
+        "jyutping": "haang4 jan4 gwo3 lou6 sin3",
+        "meaning": "人行横道"
+      },
+      {
+        "id": 47,
+        "text": "天桥",
+        "filename": "l5_47_天桥.mp3",
+        "jyutping": "tin1 kiu4",
+        "meaning": "天桥"
+      },
+      {
+        "id": 48,
+        "text": "隧道",
+        "filename": "l5_48_隧道.mp3",
+        "jyutping": "seoi6 dou6",
+        "meaning": "隧道"
+      },
+      {
+        "id": 49,
+        "text": "电梯",
+        "filename": "l5_49_电梯.mp3",
+        "jyutping": "din6 tai1",
+        "meaning": "电梯"
+      },
+      {
+        "id": 50,
+        "text": "扶手电梯",
+        "filename": "l5_50_扶手电梯.mp3",
+        "jyutping": "fu4 sau2 din6 tai1",
+        "meaning": "自动扶梯"
+      }
+    ],
+    "6": [
+      {
+        "id": 1,
+        "text": "向左转",
+        "filename": "l6_1_向左转.mp3",
+        "jyutping": "heong3 zo2 zyun3",
+        "meaning": "向左转"
+      },
+      {
+        "id": 2,
+        "text": "向右转",
+        "filename": "l6_2_向右转.mp3",
+        "jyutping": "heong3 jau6 zyun3",
+        "meaning": "向右转"
+      },
+      {
+        "id": 3,
+        "text": "直行",
+        "filename": "l6_3_直行.mp3",
+        "jyutping": "zik6 haang4",
+        "meaning": "直走"
+      },
+      {
+        "id": 4,
+        "text": "喺边度",
+        "filename": "l6_4_喺边度.mp3",
+        "jyutping": "hai2 bin1 dou6",
+        "meaning": "在哪里"
+      },
+      {
+        "id": 5,
+        "text": "附近有冇",
+        "filename": "l6_5_附近有冇.mp3",
+        "jyutping": "fu6 gan6 jau5 mou5",
+        "meaning": "附近有没有"
+      },
+      {
+        "id": 6,
+        "text": "点样去",
+        "filename": "l6_6_点样去.mp3",
+        "jyutping": "dim2 joeng2 heoi3",
+        "meaning": "怎么去"
+      },
+      {
+        "id": 7,
+        "text": "过马路",
+        "filename": "l6_7_过马路.mp3",
+        "jyutping": "gwo3 maa5 lou6",
+        "meaning": "过马路"
+      },
+      {
+        "id": 8,
+        "text": "上楼梯",
+        "filename": "l6_8_上楼梯.mp3",
+        "jyutping": "soeng5 lau4 tai1",
+        "meaning": "上楼梯"
+      },
+      {
+        "id": 9,
+        "text": "落楼梯",
+        "filename": "l6_9_落楼梯.mp3",
+        "jyutping": "lok6 lau4 tai1",
+        "meaning": "下楼梯"
+      },
+      {
+        "id": 10,
+        "text": "前面",
+        "filename": "l6_10_前面.mp3",
+        "jyutping": "cin4 min6",
+        "meaning": "前面"
+      },
+      {
+        "id": 11,
+        "text": "后面",
+        "filename": "l6_11_后面.mp3",
+        "jyutping": "hau6 min6",
+        "meaning": "后面"
+      },
+      {
+        "id": 12,
+        "text": "左边",
+        "filename": "l6_12_左边.mp3",
+        "jyutping": "zo2 bin1",
+        "meaning": "左边"
+      },
+      {
+        "id": 13,
+        "text": "右边",
+        "filename": "l6_13_右边.mp3",
+        "jyutping": "jau6 bin1",
+        "meaning": "右边"
+      },
+      {
+        "id": 14,
+        "text": "喺转角位",
+        "filename": "l6_14_喺转角位.mp3",
+        "jyutping": "hai2 zyun3 gok3 wai2",
+        "meaning": "在转角处"
+      },
+      {
+        "id": 15,
+        "text": "喺对面",
+        "filename": "l6_15_喺对面.mp3",
+        "jyutping": "hai2 deoi3 min6",
+        "meaning": "在对面"
+      },
+      {
+        "id": 16,
+        "text": "喺隔篱",
+        "filename": "l6_16_喺隔篱.mp3",
+        "jyutping": "hai2 gaak3 lei4",
+        "meaning": "在旁边"
+      },
+      {
+        "id": 17,
+        "text": "好近",
+        "filename": "l6_17_好近.mp3",
+        "jyutping": "hou2 gan6",
+        "meaning": "很近"
+      },
+      {
+        "id": 18,
+        "text": "好远",
+        "filename": "l6_18_好远.mp3",
+        "jyutping": "hou2 jyun5",
+        "meaning": "很远"
+      },
+      {
+        "id": 19,
+        "text": "行路十分钟",
+        "filename": "l6_19_行路十分钟.mp3",
+        "jyutping": "haang4 lou6 sap6 fan1 zung3",
+        "meaning": "走路十分钟"
+      },
+      {
+        "id": 20,
+        "text": "搭车五分钟",
+        "filename": "l6_20_搭车五分钟.mp3",
+        "jyutping": "daap3 ce1 ng5 fan1 zung3",
+        "meaning": "坐车五分钟"
+      },
+      {
+        "id": 21,
+        "text": "厕所喺边度",
+        "filename": "l6_21_厕所喺边度.mp3",
+        "jyutping": "ci3 so2 hai2 bin1 dou6",
+        "meaning": "厕所在哪里"
+      },
+      {
+        "id": 22,
+        "text": "ATM喺边度",
+        "filename": "l6_22_ATM喺边度.mp3",
+        "jyutping": "ATM hai2 bin1 dou6",
+        "meaning": "ATM在哪里"
+      },
+      {
+        "id": 23,
+        "text": "便利店喺边度",
+        "filename": "l6_23_便利店喺边度.mp3",
+        "jyutping": "bin6 lei6 dim3 hai2 bin1 dou6",
+        "meaning": "便利店在哪里"
+      },
+      {
+        "id": 24,
+        "text": "药房喺边度",
+        "filename": "l6_24_药房喺边度.mp3",
+        "jyutping": "joek6 fong2 hai2 bin1 dou6",
+        "meaning": "药房在哪里"
+      },
+      {
+        "id": 25,
+        "text": "医院喺边度",
+        "filename": "l6_25_医院喺边度.mp3",
+        "jyutping": "ji1 jyun2 hai2 bin1 dou6",
+        "meaning": "医院在哪里"
+      },
+      {
+        "id": 26,
+        "text": "警局喺边度",
+        "filename": "l6_26_警局喺边度.mp3",
+        "jyutping": "ging2 guk6 hai2 bin1 dou6",
+        "meaning": "警察局在哪里"
+      },
+      {
+        "id": 27,
+        "text": "邮局喺边度",
+        "filename": "l6_27_邮局喺边度.mp3",
+        "jyutping": "jau4 guk6 hai2 bin1 dou6",
+        "meaning": "邮局在哪里"
+      },
+      {
+        "id": 28,
+        "text": "银行喺边度",
+        "filename": "l6_28_银行喺边度.mp3",
+        "jyutping": "ngan4 hong4 hai2 bin1 dou6",
+        "meaning": "银行在哪里"
+      },
+      {
+        "id": 29,
+        "text": "超市喺边度",
+        "filename": "l6_29_超市喺边度.mp3",
+        "jyutping": "ciu1 si5 hai2 bin1 dou6",
+        "meaning": "超市在哪里"
+      },
+      {
+        "id": 30,
+        "text": "商场喺边度",
+        "filename": "l6_30_商场喺边度.mp3",
+        "jyutping": "soeng1 coeng4 hai2 bin1 dou6",
+        "meaning": "商场在哪里"
+      },
+      {
+        "id": 31,
+        "text": "餐厅喺边度",
+        "filename": "l6_31_餐厅喺边度.mp3",
+        "jyutping": "caan1 teng1 hai2 bin1 dou6",
+        "meaning": "餐厅在哪里"
+      },
+      {
+        "id": 32,
+        "text": "酒店喺边度",
+        "filename": "l6_32_酒店喺边度.mp3",
+        "jyutping": "zau2 dim3 hai2 bin1 dou6",
+        "meaning": "酒店在哪里"
+      },
+      {
+        "id": 33,
+        "text": "景点喺边度",
+        "filename": "l6_33_景点喺边度.mp3",
+        "jyutping": "ging2 dim2 hai2 bin1 dou6",
+        "meaning": "景点在哪里"
+      },
+      {
+        "id": 34,
+        "text": "可唔可以帮我",
+        "filename": "l6_34_可唔可以帮我.mp3",
+        "jyutping": "ho2 m4 ho2 ji5 bong1 ngo5",
+        "meaning": "可以帮我吗"
+      },
+      {
+        "id": 35,
+        "text": "我荡失路",
+        "filename": "l6_35_我荡失路.mp3",
+        "jyutping": "ngo5 dong6 sat1 lou6",
+        "meaning": "我迷路了"
+      },
+      {
+        "id": 36,
+        "text": "我唔识路",
+        "filename": "l6_36_我唔识路.mp3",
+        "jyutping": "ngo5 m4 sik1 lou6",
+        "meaning": "我不认识路"
+      },
+      {
+        "id": 37,
+        "text": "你可以带我去吗",
+        "filename": "l6_37_你可以带我去吗.mp3",
+        "jyutping": "nei5 ho2 ji5 daai3 ngo5 heoi3 maa3",
+        "meaning": "你可以带我去吗"
+      },
+      {
+        "id": 38,
+        "text": "你可以教我点行吗",
+        "filename": "l6_38_你可以教我点行吗.mp3",
+        "jyutping": "nei5 ho2 ji5 gaau3 ngo5 dim2 haang4 maa3",
+        "meaning": "你可以教我怎么走吗"
+      },
+      {
+        "id": 39,
+        "text": "麻烦你",
+        "filename": "l6_39_麻烦你.mp3",
+        "jyutping": "maa4 faan4 nei5",
+        "meaning": "麻烦你"
+      },
+      {
+        "id": 40,
+        "text": "打扰一下",
+        "filename": "l6_40_打扰一下.mp3",
+        "jyutping": "daa2 jiu5 jat1 haa5",
+        "meaning": "打扰一下"
+      },
+      {
+        "id": 41,
+        "text": "唔该借借",
+        "filename": "l6_41_唔该借借.mp3",
+        "jyutping": "m4 goi1 ze3 ze3",
+        "meaning": "请让一让"
+      },
+      {
+        "id": 42,
+        "text": "小心",
+        "filename": "l6_42_小心.mp3",
+        "jyutping": "siu2 sam1",
+        "meaning": "小心"
+      },
+      {
+        "id": 43,
+        "text": "救命",
+        "filename": "l6_43_救命.mp3",
+        "jyutping": "gau3 meng6",
+        "meaning": "救命"
+      },
+      {
+        "id": 44,
+        "text": "帮帮手",
+        "filename": "l6_44_帮帮手.mp3",
+        "jyutping": "bong1 bong1 sau2",
+        "meaning": "帮帮忙"
+      },
+      {
+        "id": 45,
+        "text": "有冇人",
+        "filename": "l6_45_有冇人.mp3",
+        "jyutping": "jau5 mou5 jan4",
+        "meaning": "有人吗"
+      },
+      {
+        "id": 46,
+        "text": "可唔可以讲慢啲",
+        "filename": "l6_46_可唔可以讲慢啲.mp3",
+        "jyutping": "ho2 m4 ho2 ji5 gong2 maan6 di1",
+        "meaning": "可以说慢一点吗"
+      },
+      {
+        "id": 47,
+        "text": "可唔可以写低俾我",
+        "filename": "l6_47_可唔可以写低俾我.mp3",
+        "jyutping": "ho2 m4 ho2 ji5 se2 dai1 bei2 ngo5",
+        "meaning": "可以写下来给我吗"
+      },
+      {
+        "id": 48,
+        "text": "我听唔明",
+        "filename": "l6_48_我听唔明.mp3",
+        "jyutping": "ngo5 ting1 m4 ming4",
+        "meaning": "我听不懂"
+      },
+      {
+        "id": 49,
+        "text": "我明啦",
+        "filename": "l6_49_我明啦.mp3",
+        "jyutping": "ngo5 ming4 laa1",
+        "meaning": "我懂了"
+      },
+      {
+        "id": 50,
+        "text": "多谢你帮忙",
+        "filename": "l6_50_多谢你帮忙.mp3",
+        "jyutping": "do1 ze6 nei5 bong1 mong4",
+        "meaning": "谢谢你的帮助"
+      }
+    ],
+    "7": [
+      {
+        "id": 1,
+        "text": "今日",
+        "filename": "l7_1_今日.mp3",
+        "jyutping": "gam1 jat6",
+        "meaning": "今天"
+      },
+      {
+        "id": 2,
+        "text": "听日",
+        "filename": "l7_2_听日.mp3",
+        "jyutping": "ting1 jat6",
+        "meaning": "明天"
+      },
+      {
+        "id": 3,
+        "text": "寻日",
+        "filename": "l7_3_寻日.mp3",
+        "jyutping": "cam4 jat6",
+        "meaning": "昨天"
+      },
+      {
+        "id": 4,
+        "text": "几点钟",
+        "filename": "l7_4_几点钟.mp3",
+        "jyutping": "gei2 dim2 zung1",
+        "meaning": "几点钟"
+      },
+      {
+        "id": 5,
+        "text": "而家",
+        "filename": "l7_5_而家.mp3",
+        "jyutping": "ji4 gaa1",
+        "meaning": "现在"
+      },
+      {
+        "id": 6,
+        "text": "一阵间",
+        "filename": "l7_6_一阵间.mp3",
+        "jyutping": "jat1 zan6 gaan1",
+        "meaning": "一会儿"
+      },
+      {
+        "id": 7,
+        "text": "等阵",
+        "filename": "l7_7_等阵.mp3",
+        "jyutping": "dang2 zan6",
+        "meaning": "等一下"
+      },
+      {
+        "id": 8,
+        "text": "好快",
+        "filename": "l7_8_好快.mp3",
+        "jyutping": "hou2 faai3",
+        "meaning": "很快"
+      },
+      {
+        "id": 9,
+        "text": "好耐",
+        "filename": "l7_9_好耐.mp3",
+        "jyutping": "hou2 noi6",
+        "meaning": "很久"
+      },
+      {
+        "id": 10,
+        "text": "准时",
+        "filename": "l7_10_准时.mp3",
+        "jyutping": "zeon2 si4",
+        "meaning": "准时"
+      },
+      {
+        "id": 11,
+        "text": "迟到",
+        "filename": "l7_11_迟到.mp3",
+        "jyutping": "ci4 dou3",
+        "meaning": "迟到"
+      },
+      {
+        "id": 12,
+        "text": "早到",
+        "filename": "l7_12_早到.mp3",
+        "jyutping": "zou2 dou3",
+        "meaning": "早到"
+      },
+      {
+        "id": 13,
+        "text": "一",
+        "filename": "l7_13_一.mp3",
+        "jyutping": "jat1",
+        "meaning": "一"
+      },
+      {
+        "id": 14,
+        "text": "二",
+        "filename": "l7_14_二.mp3",
+        "jyutping": "ji6",
+        "meaning": "二"
+      },
+      {
+        "id": 15,
+        "text": "三",
+        "filename": "l7_15_三.mp3",
+        "jyutping": "saam1",
+        "meaning": "三"
+      },
+      {
+        "id": 16,
+        "text": "四",
+        "filename": "l7_16_四.mp3",
+        "jyutping": "sei3",
+        "meaning": "四"
+      },
+      {
+        "id": 17,
+        "text": "五",
+        "filename": "l7_17_五.mp3",
+        "jyutping": "ng5",
+        "meaning": "五"
+      },
+      {
+        "id": 18,
+        "text": "六",
+        "filename": "l7_18_六.mp3",
+        "jyutping": "luk6",
+        "meaning": "六"
+      },
+      {
+        "id": 19,
+        "text": "七",
+        "filename": "l7_19_七.mp3",
+        "jyutping": "cat1",
+        "meaning": "七"
+      },
+      {
+        "id": 20,
+        "text": "八",
+        "filename": "l7_20_八.mp3",
+        "jyutping": "baat3",
+        "meaning": "八"
+      },
+      {
+        "id": 21,
+        "text": "九",
+        "filename": "l7_21_九.mp3",
+        "jyutping": "gau2",
+        "meaning": "九"
+      },
+      {
+        "id": 22,
+        "text": "十",
+        "filename": "l7_22_十.mp3",
+        "jyutping": "sap6",
+        "meaning": "十"
+      },
+      {
+        "id": 23,
+        "text": "二十",
+        "filename": "l7_23_二十.mp3",
+        "jyutping": "ji6 sap6",
+        "meaning": "二十"
+      },
+      {
+        "id": 24,
+        "text": "三十",
+        "filename": "l7_24_三十.mp3",
+        "jyutping": "saam1 sap6",
+        "meaning": "三十"
+      },
+      {
+        "id": 25,
+        "text": "四十",
+        "filename": "l7_25_四十.mp3",
+        "jyutping": "sei3 sap6",
+        "meaning": "四十"
+      },
+      {
+        "id": 26,
+        "text": "五十",
+        "filename": "l7_26_五十.mp3",
+        "jyutping": "ng5 sap6",
+        "meaning": "五十"
+      },
+      {
+        "id": 27,
+        "text": "一百",
+        "filename": "l7_27_一百.mp3",
+        "jyutping": "jat1 baak3",
+        "meaning": "一百"
+      },
+      {
+        "id": 28,
+        "text": "一千",
+        "filename": "l7_28_一千.mp3",
+        "jyutping": "jat1 cin1",
+        "meaning": "一千"
+      },
+      {
+        "id": 29,
+        "text": "一万",
+        "filename": "l7_29_一万.mp3",
+        "jyutping": "jat1 maan6",
+        "meaning": "一万"
+      },
+      {
+        "id": 30,
+        "text": "第一个",
+        "filename": "l7_30_第一个.mp3",
+        "jyutping": "dai6 jat1 go3",
+        "meaning": "第一个"
+      },
+      {
+        "id": 31,
+        "text": "第二个",
+        "filename": "l7_31_第二个.mp3",
+        "jyutping": "dai6 ji6 go3",
+        "meaning": "第二个"
+      },
+      {
+        "id": 32,
+        "text": "上午",
+        "filename": "l7_32_上午.mp3",
+        "jyutping": "soeng6 ng5",
+        "meaning": "上午"
+      },
+      {
+        "id": 33,
+        "text": "下午",
+        "filename": "l7_33_下午.mp3",
+        "jyutping": "haa6 ng5",
+        "meaning": "下午"
+      },
+      {
+        "id": 34,
+        "text": "夜晚",
+        "filename": "l7_34_夜晚.mp3",
+        "jyutping": "je6 maan5",
+        "meaning": "晚上"
+      },
+      {
+        "id": 35,
+        "text": "凌晨",
+        "filename": "l7_35_凌晨.mp3",
+        "jyutping": "ling4 san4",
+        "meaning": "凌晨"
+      },
+      {
+        "id": 36,
+        "text": "星期一",
+        "filename": "l7_36_星期一.mp3",
+        "jyutping": "sing1 kei4 jat1",
+        "meaning": "星期一"
+      },
+      {
+        "id": 37,
+        "text": "星期二",
+        "filename": "l7_37_星期二.mp3",
+        "jyutping": "sing1 kei4 ji6",
+        "meaning": "星期二"
+      },
+      {
+        "id": 38,
+        "text": "星期三",
+        "filename": "l7_38_星期三.mp3",
+        "jyutping": "sing1 kei4 saam1",
+        "meaning": "星期三"
+      },
+      {
+        "id": 39,
+        "text": "星期四",
+        "filename": "l7_39_星期四.mp3",
+        "jyutping": "sing1 kei4 sei3",
+        "meaning": "星期四"
+      },
+      {
+        "id": 40,
+        "text": "星期五",
+        "filename": "l7_40_星期五.mp3",
+        "jyutping": "sing1 kei4 ng5",
+        "meaning": "星期五"
+      },
+      {
+        "id": 41,
+        "text": "星期六",
+        "filename": "l7_41_星期六.mp3",
+        "jyutping": "sing1 kei4 luk6",
+        "meaning": "星期六"
+      },
+      {
+        "id": 42,
+        "text": "星期日",
+        "filename": "l7_42_星期日.mp3",
+        "jyutping": "sing1 kei4 jat6",
+        "meaning": "星期日"
+      },
+      {
+        "id": 43,
+        "text": "一月",
+        "filename": "l7_43_一月.mp3",
+        "jyutping": "jat1 jyut6",
+        "meaning": "一月"
+      },
+      {
+        "id": 44,
+        "text": "二月",
+        "filename": "l7_44_二月.mp3",
+        "jyutping": "ji6 jyut6",
+        "meaning": "二月"
+      },
+      {
+        "id": 45,
+        "text": "三月",
+        "filename": "l7_45_三月.mp3",
+        "jyutping": "saam1 jyut6",
+        "meaning": "三月"
+      },
+      {
+        "id": 46,
+        "text": "春季",
+        "filename": "l7_46_春季.mp3",
+        "jyutping": "ceon1 gwai3",
+        "meaning": "春季"
+      },
+      {
+        "id": 47,
+        "text": "夏季",
+        "filename": "l7_47_夏季.mp3",
+        "jyutping": "haa6 gwai3",
+        "meaning": "夏季"
+      },
+      {
+        "id": 48,
+        "text": "秋季",
+        "filename": "l7_48_秋季.mp3",
+        "jyutping": "cau1 gwai3",
+        "meaning": "秋季"
+      },
+      {
+        "id": 49,
+        "text": "冬季",
+        "filename": "l7_49_冬季.mp3",
+        "jyutping": "dung1 gwai3",
+        "meaning": "冬季"
+      },
+      {
+        "id": 50,
+        "text": "一年",
+        "filename": "l7_50_一年.mp3",
+        "jyutping": "jat1 nin4",
+        "meaning": "一年"
+      }
+    ],
+    "8": [
+      {
+        "id": 1,
+        "text": "救命",
+        "filename": "l8_1_救命.mp3",
+        "jyutping": "gau3 meng6",
+        "meaning": "救命"
+      },
+      {
+        "id": 2,
+        "text": "报警",
+        "filename": "l8_2_报警.mp3",
+        "jyutping": "bou3 ging2",
+        "meaning": "报警"
+      },
+      {
+        "id": 3,
+        "text": "叫救护车",
+        "filename": "l8_3_叫救护车.mp3",
+        "jyutping": "giu3 gau3 wu6 ce1",
+        "meaning": "叫救护车"
+      },
+      {
+        "id": 4,
+        "text": "火烛",
+        "filename": "l8_4_火烛.mp3",
+        "jyutping": "fo2 zuk1",
+        "meaning": "着火"
+      },
+      {
+        "id": 5,
+        "text": "有人受伤",
+        "filename": "l8_5_有人受伤.mp3",
+        "jyutping": "jau5 jan4 sau3 soeng1",
+        "meaning": "有人受伤"
+      },
+      {
+        "id": 6,
+        "text": "快啲走",
+        "filename": "l8_6_快啲走.mp3",
+        "jyutping": "faai3 di1 zau2",
+        "meaning": "快走"
+      },
+      {
+        "id": 7,
+        "text": "小心危险",
+        "filename": "l8_7_小心危险.mp3",
+        "jyutping": "siu2 sam1 ngai4 him2",
+        "meaning": "小心危险"
+      },
+      {
+        "id": 8,
+        "text": "帮我叫白车",
+        "filename": "l8_8_帮我叫白车.mp3",
+        "jyutping": "bong1 ngo5 giu3 baak6 ce1",
+        "meaning": "帮我叫救护车"
+      },
+      {
+        "id": 9,
+        "text": "我唔舒服",
+        "filename": "l8_9_我唔舒服.mp3",
+        "jyutping": "ngo5 m4 syu1 fuk6",
+        "meaning": "我不舒服"
+      },
+      {
+        "id": 10,
+        "text": "我发烧",
+        "filename": "l8_10_我发烧.mp3",
+        "jyutping": "ngo5 faat3 siu1",
+        "meaning": "我发烧"
+      },
+      {
+        "id": 11,
+        "text": "我头痛",
+        "filename": "l8_11_我头痛.mp3",
+        "jyutping": "ngo5 tau4 tung3",
+        "meaning": "我头痛"
+      },
+      {
+        "id": 12,
+        "text": "我肚痛",
+        "filename": "l8_12_我肚痛.mp3",
+        "jyutping": "ngo5 tou5 tung3",
+        "meaning": "我肚子痛"
+      },
+      {
+        "id": 13,
+        "text": "我受伤",
+        "filename": "l8_13_我受伤.mp3",
+        "jyutping": "ngo5 sau3 soeng1",
+        "meaning": "我受伤了"
+      },
+      {
+        "id": 14,
+        "text": "我被偷嘢",
+        "filename": "l8_14_我被偷嘢.mp3",
+        "jyutping": "ngo5 bei6 tau1 je5",
+        "meaning": "我被偷东西了"
+      },
+      {
+        "id": 15,
+        "text": "我唔见咗银包",
+        "filename": "l8_15_我唔见咗银包.mp3",
+        "jyutping": "ngo5 m4 gin3 zo2 ngan4 baau1",
+        "meaning": "我钱包不见了"
+      },
+      {
+        "id": 16,
+        "text": "我唔见咗电话",
+        "filename": "l8_16_我唔见咗电话.mp3",
+        "jyutping": "ngo5 m4 gin3 zo2 din6 waa2",
+        "meaning": "我手机不见了"
+      },
+      {
+        "id": 17,
+        "text": "我唔见咗护照",
+        "filename": "l8_17_我唔见咗护照.mp3",
+        "jyutping": "ngo5 m4 gin3 zo2 wu6 ziu3",
+        "meaning": "我护照不见了"
+      },
+      {
+        "id": 18,
+        "text": "帮我报警",
+        "filename": "l8_18_帮我报警.mp3",
+        "jyutping": "bong1 ngo5 bou3 ging2",
+        "meaning": "帮我报警"
+      },
+      {
+        "id": 19,
+        "text": "警察",
+        "filename": "l8_19_警察.mp3",
+        "jyutping": "ging2 caat3",
+        "meaning": "警察"
+      },
+      {
+        "id": 20,
+        "text": "消防员",
+        "filename": "l8_20_消防员.mp3",
+        "jyutping": "siu1 fong4 jyun4",
+        "meaning": "消防员"
+      },
+      {
+        "id": 21,
+        "text": "救护员",
+        "filename": "l8_21_救护员.mp3",
+        "jyutping": "gau3 wu6 jyun4",
+        "meaning": "救护员"
+      },
+      {
+        "id": 22,
+        "text": "附近有冇医院",
+        "filename": "l8_22_附近有冇医院.mp3",
+        "jyutping": "fu6 gan6 jau5 mou5 ji1 jyun2",
+        "meaning": "附近有医院吗"
+      },
+      {
+        "id": 23,
+        "text": "附近有冇警局",
+        "filename": "l8_23_附近有冇警局.mp3",
+        "jyutping": "fu6 gan6 jau5 mou5 ging2 guk6",
+        "meaning": "附近有警察局吗"
+      },
+      {
+        "id": 24,
+        "text": "最近嘅医院喺边度",
+        "filename": "l8_24_最近嘅医院喺边度.mp3",
+        "jyutping": "zeoi3 gan6 ge3 ji1 jyun2 hai2 bin1 dou6",
+        "meaning": "最近的医院在哪里"
+      },
+      {
+        "id": 25,
+        "text": "打999",
+        "filename": "l8_25_打999.mp3",
+        "jyutping": "daa2 gau2 gau2 gau2",
+        "meaning": "打999"
+      },
+      {
+        "id": 26,
+        "text": "大使馆电话",
+        "filename": "l8_26_大使馆电话.mp3",
+        "jyutping": "daai6 si3 gun2 din6 waa2",
+        "meaning": "大使馆电话"
+      },
+      {
+        "id": 27,
+        "text": "我需要翻译",
+        "filename": "l8_27_我需要翻译.mp3",
+        "jyutping": "ngo5 seoi1 jiu3 faan1 jik6",
+        "meaning": "我需要翻译"
+      },
+      {
+        "id": 28,
+        "text": "我唔识讲粤语",
+        "filename": "l8_28_我唔识讲粤语.mp3",
+        "jyutping": "ngo5 m4 sik1 gong2 jyut6 jyu5",
+        "meaning": "我不会说粤语"
+      },
+      {
+        "id": 29,
+        "text": "你识讲普通话吗",
+        "filename": "l8_29_你识讲普通话吗.mp3",
+        "jyutping": "nei5 sik1 gong2 pou2 tung1 waa2 maa3",
+        "meaning": "你会说普通话吗"
+      },
+      {
+        "id": 30,
+        "text": "你识讲英文吗",
+        "filename": "l8_30_你识讲英文吗.mp3",
+        "jyutping": "nei5 sik1 gong2 jing1 man2 maa3",
+        "meaning": "你会说英语吗"
+      },
+      {
+        "id": 31,
+        "text": "请帮我",
+        "filename": "l8_31_请帮我.mp3",
+        "jyutping": "ceng2 bong1 ngo5",
+        "meaning": "请帮我"
+      },
+      {
+        "id": 32,
+        "text": "我遇到麻烦",
+        "filename": "l8_32_我遇到麻烦.mp3",
+        "jyutping": "ngo5 jyu6 dou3 maa4 faan4",
+        "meaning": "我遇到麻烦了"
+      },
+      {
+        "id": 33,
+        "text": "我系游客",
+        "filename": "l8_33_我系游客.mp3",
+        "jyutping": "ngo5 hai6 jau4 haak3",
+        "meaning": "我是游客"
+      },
+      {
+        "id": 34,
+        "text": "我来自中国",
+        "filename": "l8_34_我来自中国.mp3",
+        "jyutping": "ngo5 loi4 zi6 zung1 gwok3",
+        "meaning": "我来自中国"
+      },
+      {
+        "id": 35,
+        "text": "紧急联络人",
+        "filename": "l8_35_紧急联络人.mp3",
+        "jyutping": "gan2 gap1 lyun4 lok3 jan4",
+        "meaning": "紧急联系人"
+      },
+      {
+        "id": 36,
+        "text": "过敏",
+        "filename": "l8_36_过敏.mp3",
+        "jyutping": "gwo3 man5",
+        "meaning": "过敏"
+      },
+      {
+        "id": 37,
+        "text": "哮喘",
+        "filename": "l8_37_哮喘.mp3",
+        "jyutping": "haau1 chyun2",
+        "meaning": "哮喘"
+      },
+      {
+        "id": 38,
+        "text": "心脏病",
+        "filename": "l8_38_心脏病.mp3",
+        "jyutping": "sam1 zong1 beng6",
+        "meaning": "心脏病"
+      },
+      {
+        "id": 39,
+        "text": "糖尿病",
+        "filename": "l8_39_糖尿病.mp3",
+        "jyutping": "tong4 niu6 beng6",
+        "meaning": "糖尿病"
+      },
+      {
+        "id": 40,
+        "text": "高血压",
+        "filename": "l8_40_高血压.mp3",
+        "jyutping": "gou1 hyut3 ngaat1",
+        "meaning": "高血压"
+      },
+      {
+        "id": 41,
+        "text": "我嚟唔切",
+        "filename": "l8_41_我嚟唔切.mp3",
+        "jyutping": "ngo5 lei4 m4 cit3",
+        "meaning": "我来不及了"
+      },
+      {
+        "id": 42,
+        "text": "等埋我",
+        "filename": "l8_42_等埋我.mp3",
+        "jyutping": "dang2 maai4 ngo5",
+        "meaning": "等等我"
+      },
+      {
+        "id": 43,
+        "text": "唔好行咁快",
+        "filename": "l8_43_唔好行咁快.mp3",
+        "jyutping": "m4 hou2 haang4 gam3 faai3",
+        "meaning": "不要走那么快"
+      },
+      {
+        "id": 44,
+        "text": "我追唔到",
+        "filename": "l8_44_我追唔到.mp3",
+        "jyutping": "ngo5 zeoi1 m4 dou3",
+        "meaning": "我追不上"
+      },
+      {
+        "id": 45,
+        "text": "我跑唔郁",
+        "filename": "l8_45_我跑唔郁.mp3",
+        "jyutping": "ngo5 paau2 m4 juk1",
+        "meaning": "我跑不动"
+      },
+      {
+        "id": 46,
+        "text": "我好攰",
+        "filename": "l8_46_我好攰.mp3",
+        "jyutping": "ngo5 hou2 gui6",
+        "meaning": "我很累"
+      },
+      {
+        "id": 47,
+        "text": "我唞下先",
+        "filename": "l8_47_我唞下先.mp3",
+        "jyutping": "ngo5 tau2 haa5 sin1",
+        "meaning": "我先休息一下"
+      },
+      {
+        "id": 48,
+        "text": "俾杯水我",
+        "filename": "l8_48_俾杯水我.mp3",
+        "jyutping": "bei2 bui1 seoi2 ngo5",
+        "meaning": "给我一杯水"
+      },
+      {
+        "id": 49,
+        "text": "我需要休息",
+        "filename": "l8_49_我需要休息.mp3",
+        "jyutping": "ngo5 seoi1 jiu3 jau1 sik1",
+        "meaning": "我需要休息"
+      },
+      {
+        "id": 50,
+        "text": "多谢你帮忙",
+        "filename": "l8_50_多谢你帮忙.mp3",
+        "jyutping": "do1 ze6 nei5 bong1 mong4",
+        "meaning": "谢谢你的帮助"
+      }
+    ],
+    "9": [
+      {
+        "id": 1,
+        "text": "上课",
+        "filename": "l9_1_上课.mp3",
+        "jyutping": "soeng5 fo3",
+        "meaning": "上课"
+      },
+      {
+        "id": 2,
+        "text": "落堂",
+        "filename": "l9_2_落堂.mp3",
+        "jyutping": "lok6 tong4",
+        "meaning": "下课"
+      },
+      {
+        "id": 3,
+        "text": "放学",
+        "filename": "l9_3_放学.mp3",
+        "jyutping": "fong3 hok6",
+        "meaning": "放学"
+      },
+      {
+        "id": 4,
+        "text": "考试",
+        "filename": "l9_4_考试.mp3",
+        "jyutping": "haau2 si5",
+        "meaning": "考试"
+      },
+      {
+        "id": 5,
+        "text": "测验",
+        "filename": "l9_5_测验.mp3",
+        "jyutping": "cak1 jim6",
+        "meaning": "测验"
+      },
+      {
+        "id": 6,
+        "text": "交功课",
+        "filename": "l9_6_交功课.mp3",
+        "jyutping": "gaau1 gung1 fo3",
+        "meaning": "交作业"
+      },
+      {
+        "id": 7,
+        "text": "图书馆",
+        "filename": "l9_7_图书馆.mp3",
+        "jyutping": "tou4 syu1 gun2",
+        "meaning": "图书馆"
+      },
+      {
+        "id": 8,
+        "text": "实验室",
+        "filename": "l9_8_实验室.mp3",
+        "jyutping": "sat6 jim6 sat1",
+        "meaning": "实验室"
+      },
+      {
+        "id": 9,
+        "text": "操场",
+        "filename": "l9_9_操场.mp3",
+        "jyutping": "cou1 coeng4",
+        "meaning": "操场"
+      },
+      {
+        "id": 10,
+        "text": "礼堂",
+        "filename": "l9_10_礼堂.mp3",
+        "jyutping": "lai5 tong4",
+        "meaning": "礼堂"
+      },
+      {
+        "id": 11,
+        "text": "老师",
+        "filename": "l9_11_老师.mp3",
+        "jyutping": "lou5 si1",
+        "meaning": "老师"
+      },
+      {
+        "id": 12,
+        "text": "同学",
+        "filename": "l9_12_同学.mp3",
+        "jyutping": "tung4 hok6",
+        "meaning": "同学"
+      },
+      {
+        "id": 13,
+        "text": "校长",
+        "filename": "l9_13_校长.mp3",
+        "jyutping": "haau6 zoeng2",
+        "meaning": "校长"
+      },
+      {
+        "id": 14,
+        "text": "班主任",
+        "filename": "l9_14_班主任.mp3",
+        "jyutping": "baan1 zyu2 jam6",
+        "meaning": "班主任"
+      },
+      {
+        "id": 15,
+        "text": "数学",
+        "filename": "l9_15_数学.mp3",
+        "jyutping": "sou3 hok6",
+        "meaning": "数学"
+      },
+      {
+        "id": 16,
+        "text": "英文",
+        "filename": "l9_16_英文.mp3",
+        "jyutping": "jing1 man2",
+        "meaning": "英语"
+      },
+      {
+        "id": 17,
+        "text": "中文",
+        "filename": "l9_17_中文.mp3",
+        "jyutping": "zung1 man2",
+        "meaning": "语文"
+      },
+      {
+        "id": 18,
+        "text": "物理",
+        "filename": "l9_18_物理.mp3",
+        "jyutping": "mat6 lei5",
+        "meaning": "物理"
+      },
+      {
+        "id": 19,
+        "text": "化学",
+        "filename": "l9_19_化学.mp3",
+        "jyutping": "faa3 hok6",
+        "meaning": "化学"
+      },
+      {
+        "id": 20,
+        "text": "生物",
+        "filename": "l9_20_生物.mp3",
+        "jyutping": "sang1 mat6",
+        "meaning": "生物"
+      },
+      {
+        "id": 21,
+        "text": "历史",
+        "filename": "l9_21_历史.mp3",
+        "jyutping": "lik6 si2",
+        "meaning": "历史"
+      },
+      {
+        "id": 22,
+        "text": "地理",
+        "filename": "l9_22_地理.mp3",
+        "jyutping": "dei6 lei5",
+        "meaning": "地理"
+      },
+      {
+        "id": 23,
+        "text": "体育",
+        "filename": "l9_23_体育.mp3",
+        "jyutping": "tai2 juk6",
+        "meaning": "体育"
+      },
+      {
+        "id": 24,
+        "text": "音乐",
+        "filename": "l9_24_音乐.mp3",
+        "jyutping": "jam1 ngok6",
+        "meaning": "音乐"
+      },
+      {
+        "id": 25,
+        "text": "美术",
+        "filename": "l9_25_美术.mp3",
+        "jyutping": "mei5 seot6",
+        "meaning": "美术"
+      },
+      {
+        "id": 26,
+        "text": "功课好多",
+        "filename": "l9_26_功课好多.mp3",
+        "jyutping": "gung1 fo3 hou2 do1",
+        "meaning": "作业很多"
+      },
+      {
+        "id": 27,
+        "text": "考试好难",
+        "filename": "l9_27_考试好难.mp3",
+        "jyutping": "haau2 si5 hou2 naan4",
+        "meaning": "考试很难"
+      },
+      {
+        "id": 28,
+        "text": "我合格",
+        "filename": "l9_28_我合格.mp3",
+        "jyutping": "ngo5 hap6 gaak3",
+        "meaning": "我及格了"
+      },
+      {
+        "id": 29,
+        "text": "我唔合格",
+        "filename": "l9_29_我唔合格.mp3",
+        "jyutping": "ngo5 m4 hap6 gaak3",
+        "meaning": "我不及格"
+      },
+      {
+        "id": 30,
+        "text": "我攞A",
+        "filename": "l9_30_我攞A.mp3",
+        "jyutping": "ngo5 lo2 A",
+        "meaning": "我拿A"
+      },
+      {
+        "id": 31,
+        "text": "我攞B",
+        "filename": "l9_31_我攞B.mp3",
+        "jyutping": "ngo5 lo2 B",
+        "meaning": "我拿B"
+      },
+      {
+        "id": 32,
+        "text": "我攞C",
+        "filename": "l9_32_我攞C.mp3",
+        "jyutping": "ngo5 lo2 C",
+        "meaning": "我拿C"
+      },
+      {
+        "id": 33,
+        "text": "我考第一",
+        "filename": "l9_33_我考第一.mp3",
+        "jyutping": "ngo5 haau2 dai6 jat1",
+        "meaning": "我考第一名"
+      },
+      {
+        "id": 34,
+        "text": "我考第二",
+        "filename": "l9_34_我考第二.mp3",
+        "jyutping": "ngo5 haau2 dai6 ji6",
+        "meaning": "我考第二名"
+      },
+      {
+        "id": 35,
+        "text": "我考第三",
+        "filename": "l9_35_我考第三.mp3",
+        "jyutping": "ngo5 haau2 dai6 saam1",
+        "meaning": "我考第三名"
+      },
+      {
+        "id": 36,
+        "text": "奖学金",
+        "filename": "l9_36_奖学金.mp3",
+        "jyutping": "zoeng2 hok6 gam1",
+        "meaning": "奖学金"
+      },
+      {
+        "id": 37,
+        "text": "毕业",
+        "filename": "l9_37_毕业.mp3",
+        "jyutping": "bat1 jip6",
+        "meaning": "毕业"
+      },
+      {
+        "id": 38,
+        "text": "升学",
+        "filename": "l9_38_升学.mp3",
+        "jyutping": "sing1 hok6",
+        "meaning": "升学"
+      },
+      {
+        "id": 39,
+        "text": "留学",
+        "filename": "l9_39_留学.mp3",
+        "jyutping": "lau4 hok6",
+        "meaning": "留学"
+      },
+      {
+        "id": 40,
+        "text": "交换生",
+        "filename": "l9_40_交换生.mp3",
+        "jyutping": "gaau1 wun6 saang1",
+        "meaning": "交换生"
+      },
+      {
+        "id": 41,
+        "text": "大学",
+        "filename": "l9_41_大学.mp3",
+        "jyutping": "daai6 hok6",
+        "meaning": "大学"
+      },
+      {
+        "id": 42,
+        "text": "中学",
+        "filename": "l9_42_中学.mp3",
+        "jyutping": "zung1 hok6",
+        "meaning": "中学"
+      },
+      {
+        "id": 43,
+        "text": "小学",
+        "filename": "l9_43_小学.mp3",
+        "jyutping": "siu2 hok6",
+        "meaning": "小学"
+      },
+      {
+        "id": 44,
+        "text": "幼儿园",
+        "filename": "l9_44_幼儿园.mp3",
+        "jyutping": "jau4 ji4 jyun2",
+        "meaning": "幼儿园"
+      },
+      {
+        "id": 45,
+        "text": "请病假",
+        "filename": "l9_45_请病假.mp3",
+        "jyutping": "ceng2 beng6 gaa3",
+        "meaning": "请病假"
+      },
+      {
+        "id": 46,
+        "text": "请事假",
+        "filename": "l9_46_请事假.mp3",
+        "jyutping": "ceng2 si6 gaa3",
+        "meaning": "请事假"
+      },
+      {
+        "id": 47,
+        "text": "迟到",
+        "filename": "l9_47_迟到.mp3",
+        "jyutping": "ci4 dou3",
+        "meaning": "迟到"
+      },
+      {
+        "id": 48,
+        "text": "早退",
+        "filename": "l9_48_早退.mp3",
+        "jyutping": "zou2 teoi3",
+        "meaning": "早退"
+      },
+      {
+        "id": 49,
+        "text": "旷课",
+        "filename": "l9_49_旷课.mp3",
+        "jyutping": "kwong3 fo3",
+        "meaning": "旷课"
+      },
+      {
+        "id": 50,
+        "text": "留堂",
+        "filename": "l9_50_留堂.mp3",
+        "jyutping": "lau4 tong4",
+        "meaning": "留校"
+      }
+    ],
+    "10": [
+      {
+        "id": 1,
+        "text": "好开心",
+        "filename": "l10_1_好开心.mp3",
+        "jyutping": "hou2 hoi1 sam1",
+        "meaning": "很开心"
+      },
+      {
+        "id": 2,
+        "text": "好伤心",
+        "filename": "l10_2_好伤心.mp3",
+        "jyutping": "hou2 soeng1 sam1",
+        "meaning": "很伤心"
+      },
+      {
+        "id": 3,
+        "text": "好兴奋",
+        "filename": "l10_3_好兴奋.mp3",
+        "jyutping": "hou2 hing1 fan5",
+        "meaning": "很兴奋"
+      },
+      {
+        "id": 4,
+        "text": "好紧张",
+        "filename": "l10_4_好紧张.mp3",
+        "jyutping": "hou2 gan2 zoeng1",
+        "meaning": "很紧张"
+      },
+      {
+        "id": 5,
+        "text": "好攰",
+        "filename": "l10_5_好攰.mp3",
+        "jyutping": "hou2 gui6",
+        "meaning": "很累"
+      },
+      {
+        "id": 6,
+        "text": "好眼瞓",
+        "filename": "l10_6_好眼瞓.mp3",
+        "jyutping": "hou2 ngaan5 fan3",
+        "meaning": "很困"
+      },
+      {
+        "id": 7,
+        "text": "好肚饿",
+        "filename": "l10_7_好肚饿.mp3",
+        "jyutping": "hou2 tou5 ngo6",
+        "meaning": "很饿"
+      },
+      {
+        "id": 8,
+        "text": "好口渴",
+        "filename": "l10_8_好口渴.mp3",
+        "jyutping": "hou2 hau2 hot3",
+        "meaning": "很渴"
+      },
+      {
+        "id": 9,
+        "text": "好嬲",
+        "filename": "l10_9_好嬲.mp3",
+        "jyutping": "hou2 nau1",
+        "meaning": "很生气"
+      },
+      {
+        "id": 10,
+        "text": "好惊",
+        "filename": "l10_10_好惊.mp3",
+        "jyutping": "hou2 geng1",
+        "meaning": "很害怕"
+      },
+      {
+        "id": 11,
+        "text": "好幸福",
+        "filename": "l10_11_好幸福.mp3",
+        "jyutping": "hou2 hang6 fuk1",
+        "meaning": "很幸福"
+      },
+      {
+        "id": 12,
+        "text": "好感动",
+        "filename": "l10_12_好感动.mp3",
+        "jyutping": "hou2 gam2 dung6",
+        "meaning": "很感动"
+      },
+      {
+        "id": 13,
+        "text": "好满足",
+        "filename": "l10_13_好满足.mp3",
+        "jyutping": "hou2 mun5 zuk1",
+        "meaning": "很满足"
+      },
+      {
+        "id": 14,
+        "text": "好失望",
+        "filename": "l10_14_好失望.mp3",
+        "jyutping": "hou2 sat1 mong6",
+        "meaning": "很失望"
+      },
+      {
+        "id": 15,
+        "text": "好无聊",
+        "filename": "l10_15_好无聊.mp3",
+        "jyutping": "hou2 mou4 liu4",
+        "meaning": "很无聊"
+      },
+      {
+        "id": 16,
+        "text": "好寂寞",
+        "filename": "l10_16_好寂寞.mp3",
+        "jyutping": "hou2 zik6 mok6",
+        "meaning": "很寂寞"
+      },
+      {
+        "id": 17,
+        "text": "好挂住你",
+        "filename": "l10_17_好挂住你.mp3",
+        "jyutping": "hou2 gwaa3 zyu6 nei5",
+        "meaning": "很想你"
+      },
+      {
+        "id": 18,
+        "text": "我爱你",
+        "filename": "l10_18_我爱你.mp3",
+        "jyutping": "ngo5 oi3 nei5",
+        "meaning": "我爱你"
+      },
+      {
+        "id": 19,
+        "text": "我中意你",
+        "filename": "l10_19_我中意你.mp3",
+        "jyutping": "ngo5 zung1 ji3 nei5",
+        "meaning": "我喜欢你"
+      },
+      {
+        "id": 20,
+        "text": "你系我嘅唯一",
+        "filename": "l10_20_你系我嘅唯一.mp3",
+        "jyutping": "nei5 hai6 ngo5 ge3 wai4 jat1",
+        "meaning": "你是我的唯一"
+      },
+      {
+        "id": 21,
+        "text": "你好靓",
+        "filename": "l10_21_你好靓.mp3",
+        "jyutping": "nei5 hou2 leng3",
+        "meaning": "你很漂亮"
+      },
+      {
+        "id": 22,
+        "text": "你好型",
+        "filename": "l10_22_你好型.mp3",
+        "jyutping": "nei5 hou2 jing4",
+        "meaning": "你很帅"
+      },
+      {
+        "id": 23,
+        "text": "你好可爱",
+        "filename": "l10_23_你好可爱.mp3",
+        "jyutping": "nei5 hou2 ho2 oi3",
+        "meaning": "你很可爱"
+      },
+      {
+        "id": 24,
+        "text": "你好聪明",
+        "filename": "l10_24_你好聪明.mp3",
+        "jyutping": "nei5 hou2 cung1 ming4",
+        "meaning": "你很聪明"
+      },
+      {
+        "id": 25,
+        "text": "你好善良",
+        "filename": "l10_25_你好善良.mp3",
+        "jyutping": "nei5 hou2 sin3 loeng4",
+        "meaning": "你很善良"
+      },
+      {
+        "id": 26,
+        "text": "我以你为荣",
+        "filename": "l10_26_我以你为荣.mp3",
+        "jyutping": "ngo5 ji5 nei5 wai4 wing4",
+        "meaning": "我以你为荣"
+      },
+      {
+        "id": 27,
+        "text": "加油",
+        "filename": "l10_27_加油.mp3",
+        "jyutping": "gaa1 jau2",
+        "meaning": "加油"
+      },
+      {
+        "id": 28,
+        "text": "努力",
+        "filename": "l10_28_努力.mp3",
+        "jyutping": "nou5 lik6",
+        "meaning": "努力"
+      },
+      {
+        "id": 29,
+        "text": "坚持",
+        "filename": "l10_29_坚持.mp3",
+        "jyutping": "gin1 ci4",
+        "meaning": "坚持"
+      },
+      {
+        "id": 30,
+        "text": "唔好放弃",
+        "filename": "l10_30_唔好放弃.mp3",
+        "jyutping": "m4 hou2 fong3 hei3",
+        "meaning": "不要放弃"
+      },
+      {
+        "id": 31,
+        "text": "你一定得",
+        "filename": "l10_31_你一定得.mp3",
+        "jyutping": "nei5 jat1 ding6 dak1",
+        "meaning": "你一定可以的"
+      },
+      {
+        "id": 32,
+        "text": "我支持你",
+        "filename": "l10_32_我支持你.mp3",
+        "jyutping": "ngo5 zi1 ci4 nei5",
+        "meaning": "我支持你"
+      },
+      {
+        "id": 33,
+        "text": "我信你",
+        "filename": "l10_33_我信你.mp3",
+        "jyutping": "ngo5 seon3 nei5",
+        "meaning": "我相信你"
+      },
+      {
+        "id": 34,
+        "text": "你系最好嘅",
+        "filename": "l10_34_你系最好嘅.mp3",
+        "jyutping": "nei5 hai6 zeoi3 hou2 ge3",
+        "meaning": "你是最好的"
+      },
+      {
+        "id": 35,
+        "text": "今日好特别",
+        "filename": "l10_35_今日好特别.mp3",
+        "jyutping": "gam1 jat6 hou2 dak6 bit6",
+        "meaning": "今天很特别"
+      },
+      {
+        "id": 36,
+        "text": "今日好难忘",
+        "filename": "l10_36_今日好难忘.mp3",
+        "jyutping": "gam1 jat6 hou2 naan4 mong4",
+        "meaning": "今天很难忘"
+      },
+      {
+        "id": 37,
+        "text": "今日好重要",
+        "filename": "l10_37_今日好重要.mp3",
+        "jyutping": "gam1 jat6 hou2 zung6 jiu3",
+        "meaning": "今天很重要"
+      },
+      {
+        "id": 38,
+        "text": "我记得今日",
+        "filename": "l10_38_我记得今日.mp3",
+        "jyutping": "ngo5 gei3 dak1 gam1 jat6",
+        "meaning": "我记得今天"
+      },
+      {
+        "id": 39,
+        "text": "我唔会忘记",
+        "filename": "l10_39_我唔会忘记.mp3",
+        "jyutping": "ngo5 m4 wui5 mong4 gei3",
+        "meaning": "我不会忘记"
+      },
+      {
+        "id": 40,
+        "text": "多谢你嘅爱",
+        "filename": "l10_40_多谢你嘅爱.mp3",
+        "jyutping": "do1 ze6 nei5 ge3 oi3",
+        "meaning": "谢谢你的爱"
+      },
+      {
+        "id": 41,
+        "text": "多谢你嘅关心",
+        "filename": "l10_41_多谢你嘅关心.mp3",
+        "jyutping": "do1 ze6 nei5 ge3 gwaan1 sam1",
+        "meaning": "谢谢你的关心"
+      },
+      {
+        "id": 42,
+        "text": "多谢你嘅支持",
+        "filename": "l10_42_多谢你嘅支持.mp3",
+        "jyutping": "do1 ze6 nei5 ge3 zi1 ci4",
+        "meaning": "谢谢你的支持"
+      },
+      {
+        "id": 43,
+        "text": "有你真好",
+        "filename": "l10_43_有你真好.mp3",
+        "jyutping": "jau5 nei5 zan1 hou2",
+        "meaning": "有你真好"
+      },
+      {
+        "id": 44,
+        "text": "识到你真好",
+        "filename": "l10_44_识到你真好.mp3",
+        "jyutping": "sik1 dou3 nei5 zan1 hou2",
+        "meaning": "认识你真好"
+      },
+      {
+        "id": 45,
+        "text": "同你一齐好开心",
+        "filename": "l10_45_同你一齐好开心.mp3",
+        "jyutping": "tung4 nei5 jat1 cai4 hou2 hoi1 sam1",
+        "meaning": "和你在一起很开心"
+      },
+      {
+        "id": 46,
+        "text": "希望再见到你",
+        "filename": "l10_46_希望再见到你.mp3",
+        "jyutping": "hei1 mong6 zoi3 gin3 dou3 nei5",
+        "meaning": "希望能再见到你"
+      },
+      {
+        "id": 47,
+        "text": "保重",
+        "filename": "l10_47_保重.mp3",
+        "jyutping": "bou2 zung6",
+        "meaning": "保重"
+      },
+      {
+        "id": 48,
+        "text": "珍重",
+        "filename": "l10_48_珍重.mp3",
+        "jyutping": "zan1 zung6",
+        "meaning": "珍重"
+      },
+      {
+        "id": 49,
+        "text": "后会有期",
+        "filename": "l10_49_后会有期.mp3",
+        "jyutping": "hau6 wui6 jau5 kei4",
+        "meaning": "后会有期"
+      },
+      {
+        "id": 50,
+        "text": "友谊万岁",
+        "filename": "l10_50_友谊万岁.mp3",
+        "jyutping": "jau5 ji4 maan6 seoi3",
+        "meaning": "友谊万岁"
+      }
+    ]
+  }
+}
