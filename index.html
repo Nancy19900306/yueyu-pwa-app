@@ -1,32 +1,43 @@
 <!-- PWA 支持 -->
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<meta name="theme-color" content="#F0F7F4">
+<meta name="theme-color" content="#1A1A2E">
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>粤语闯关王 - 趣味听说训练</title>
-    <!-- 引入 Tailwind CSS -->
     <script src="https://data.zcat.cn/cdn/npm/@tailwindcss/3.4.17.js"></script>
-    <!-- 在 <body> 开头或 <script> 之前添加 -->
-	<script src="cantonese_full_db.js"></script>
+    <script src="cantonese_full_db.js"></script>
     <style>
-        /* 基础设置 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", sans-serif;
-            background-color: #F0F7F4; /* 护眼浅青绿 */
-            user-select: none; /* 防止误选文本 */
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation; /* 优化触摸响应 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* 隐藏滚动条但保留功能 */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(145deg, #1A1A2E 0%, #16213E 100%);
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        /* 动画定义 */
+        /* 玻璃态效果 */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* 动画 */
         @keyframes pop {
             0% { transform: scale(0.9); opacity: 0; }
             100% { transform: scale(1); opacity: 1; }
@@ -36,131 +47,159 @@
             25% { transform: translateX(-5px); }
             75% { transform: translateX(5px); }
         }
-        @keyframes fire-pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
         .animate-shake { animation: shake 0.4s ease-in-out; }
-        .animate-fire { animation: fire-pulse 1s infinite; }
-
-        /* 按钮点击反馈 */
-        .btn-active:active { transform: scale(0.96); }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-slide-up { animation: slideUp 0.4s ease-out; }
         
-        /* 玻璃拟态卡片 */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 10px; }
+
+        /* 按钮效果 */
+        .btn-active:active { transform: scale(0.96); transition: transform 0.1s ease; }
+        
+        /* 进度条 */
+        .progress-bar {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
+        
+        /* 选项按钮 */
+        .option-btn {
+            transition: all 0.2s ease;
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .option-btn:active { transform: scale(0.97); }
+        .option-btn.correct {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-color: #059669;
+            color: white;
+        }
+        .option-btn.wrong {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-color: #dc2626;
+            color: white;
+        }
+        
+        /* 播放按钮波纹 */
+        .play-btn {
+            position: relative;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 10px 30px -5px rgba(102, 126, 234, 0.4);
+        }
+        .play-btn:active { transform: scale(0.95); }
+        
+        /* 关卡卡片 */
+        .level-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="h-screen w-screen overflow-hidden flex flex-col text-gray-700">
+<body class="h-screen w-screen overflow-hidden flex flex-col">
 
-    <!-- ================= 顶部状态栏 (自适应) ================= -->
-    <header class="h-14 sm:h-16 bg-white shadow-sm flex items-center justify-between px-4 sm:px-6 z-20 shrink-0">
-        <!-- 左侧：标题 -->
+    <!-- 顶部状态栏 -->
+    <header class="glass h-14 sm:h-16 flex items-center justify-between px-4 sm:px-6 z-20 shrink-0">
         <div class="flex items-center gap-2 sm:gap-4 w-1/3">
-            <div class="text-xl sm:text-2xl font-bold text-blue-600 tracking-wider cursor-pointer flex items-center" onclick="showMap()">
-                <span class="mr-2">🗺️</span> <span class="hidden sm:inline">常用粤语</span><span class="sm:hidden">常用粤语</span>
-            </div>
-            <!-- 手机端隐藏进度条文字，只留小圆点或简化 -->
-            <div class="hidden md:flex flex-col w-32 lg:w-48">
-                <div class="flex justify-between text-xs text-gray-500 mb-1">
-                    <span>总进度</span>
-                    <span id="global-progress-text">0 / 500</span>
-                </div>
-                <div class="w-full bg-gray-200 rounded-full h-2">
-                    <div id="global-progress-bar" class="bg-blue-500 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
-                </div>
+            <div class="text-xl sm:text-2xl font-bold text-white tracking-wider cursor-pointer flex items-center" onclick="showMap()">
+                <span class="mr-2">🎯</span>
+                <span class="hidden sm:inline">粤语闯关王</span>
+                <span class="sm:hidden">闯关王</span>
             </div>
         </div>
 
-        <!-- 中间：当前关卡 (手机端简化) -->
-        <div class="flex items-center gap-2 bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">
-            <span class="text-yellow-600 font-bold text-sm sm:text-lg" id="header-level-name">第 1 关</span>
-            <span class="text-gray-300 hidden sm:inline">|</span>
-            <span class="text-gray-600 text-xs sm:text-sm font-medium truncate max-w-[80px] sm:max-w-none" id="header-level-topic">基础问候</span>
+        <div class="flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
+            <span class="text-yellow-300 font-bold text-sm sm:text-lg" id="header-level-name">第 1 关</span>
+            <span class="text-white/40 text-xs">•</span>
+            <span class="text-white/80 text-xs sm:text-sm font-medium truncate max-w-[80px] sm:max-w-none" id="header-level-topic">基础问候</span>
         </div>
 
-        <!-- 右侧：连胜与错题本 -->
         <div class="flex items-center gap-2 sm:gap-4 w-1/3 justify-end">
-    
-            
-            <button onclick="showWrongBook()" class="relative bg-red-50 hover:bg-red-100 text-red-500 p-2 rounded-lg border border-red-100 transition-all btn-active">
-                <span class="text-xl">📚</span>
-                <span id="wrong-count-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-sm">0</span>
+            <button onclick="showWrongBook()" class="relative bg-white/10 hover:bg-white/20 text-white p-2 rounded-xl transition-all btn-active backdrop-blur-sm">
+                <span class="text-lg">📖</span>
+                <span id="wrong-count-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
             </button>
         </div>
     </header>
 
-    <!-- ================= 主内容区域 ================= -->
     <main class="flex-1 relative overflow-hidden flex">
         
-        <!-- 视图 1: 关卡地图 -->
-        <div id="view-map" class="absolute inset-0 bg-[#F0F7F4] p-4 sm:p-6 overflow-y-auto no-scrollbar transition-opacity duration-300">
-            <!-- 网格自适应：手机 1 列，平板 2 列，大屏 5 列 -->
-            <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 pb-10">
-                <!-- 关卡卡片由 JS 生成 -->
+        <!-- 关卡地图视图 -->
+        <div id="view-map" class="absolute inset-0 p-4 sm:p-6 overflow-y-auto no-scrollbar transition-opacity duration-300">
+            <div class="max-w-5xl mx-auto grid grid-cols-2 gap-4 pb-10" id="map-grid">
+                <!-- 关卡卡片由JS生成 -->
             </div>
         </div>
 
-        <!-- 视图 2: 学习挑战区 (仅听音辨意) -->
-        <div id="view-learning" class="absolute inset-0 bg-gray-50 hidden flex-col items-center justify-center p-4 sm:p-6">
+        <!-- 学习挑战视图 -->
+        <div id="view-learning" class="absolute inset-0 hidden flex-col items-center justify-center p-4">
             
-            <!-- 顶部返回 -->
             <div class="absolute top-4 left-4 z-10">
-                <button onclick="showMap()" class="bg-white hover:bg-gray-100 text-gray-600 px-4 py-2 rounded-xl shadow-md font-bold flex items-center gap-2 btn-active transition-all text-sm sm:text-base">
-                    <span>🌍</span> <span class="hidden sm:inline">返回地图</span>
+                <button onclick="showMap()" class="glass text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 btn-active text-sm backdrop-blur-sm">
+                    <span>🏠</span> <span class="hidden sm:inline">返回</span>
                 </button>
             </div>
-            
-    
 
-            <!-- 核心卡片容器 -->
-            <div class="w-full max-w-2xl h-full flex flex-col justify-center gap-4 sm:gap-6 pb-10">
+            <div class="w-full max-w-2xl h-full flex flex-col justify-center gap-4 pb-10">
                 
-           
-
                 <!-- 听力挑战卡片 -->
                 <div id="stage-listening" class="flex-1 flex flex-col items-center justify-center animate-pop">
-                    <div class="glass-card w-full rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden">
-                        <!-- 装饰条 -->
-                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-cyan-300"></div>
+                    <div class="glass-card w-full rounded-3xl shadow-2xl p-6 sm:p-8 flex flex-col items-center text-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-purple-500"></div>
                         
-                        <h2 class="text-xl sm:text-2xl font-bold text-gray-700 mb-4 sm:mb-6">👂 听音辨意</h2>
+                        <h2 class="text-xl sm:text-2xl font-bold text-gray-700 mb-4">🎧 听音辨意</h2>
                         
-                        <!-- 播放按钮 (大尺寸，适合手指) -->
-                        <div class="mb-6 sm:mb-8 relative group cursor-pointer" onclick="playCurrentAudio()">
-                            <div class="w-24 h-24 sm:w-32 sm:h-32 bg-blue-50 rounded-full flex items-center justify-center shadow-inner group-hover:bg-blue-100 transition-colors btn-active border-4 border-white">
-                                <span class="text-5xl sm:text-6xl">🎧</span>
+                        <!-- 播放按钮 -->
+                        <div class="mb-6 relative group cursor-pointer" onclick="playCurrentAudio()">
+                            <div class="play-btn w-28 h-28 sm:w-32 sm:h-32 rounded-full flex items-center justify-center shadow-xl transition-all btn-active border-4 border-white">
+                                <span class="text-5xl sm:text-6xl text-white drop-shadow-lg">🔊</span>
                             </div>
-                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-3 py-1 rounded-full text-xs text-gray-500 shadow-sm whitespace-nowrap border border-gray-100">
-                                点击重听
+                            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-white shadow-md whitespace-nowrap">
+                                点击播放
                             </div>
                         </div>
 
-                        <!-- 选项网格 (手机 1 列，平板 2 列) -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full" id="options-container">
-                            <!-- 选项由 JS 生成 -->
-                        </div>
+                        <!-- 选项网格 - 手机2列 -->
+                        <div class="grid grid-cols-2 gap-3 w-full" id="options-container"></div>
 
                         <!-- 反馈区域 -->
-                        <div id="listening-feedback" class="hidden mt-4 sm:mt-6 w-full p-3 sm:p-4 rounded-xl flex items-center justify-center gap-2 sm:gap-3 font-bold text-base sm:text-lg">
-                            <!-- 动态内容 -->
-                        </div>
+                        <div id="listening-feedback" class="hidden mt-4 w-full p-3 rounded-xl flex items-center justify-center gap-2 font-bold text-base"></div>
                     </div>
                 </div>
 
                 <!-- 完成弹窗 -->
                 <div id="completion-modal" class="hidden absolute inset-0 bg-black/60 z-50 flex items-center justify-center backdrop-blur-sm p-4">
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl animate-pop">
+                    <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl animate-pop">
                         <div class="text-6xl mb-4">🎉</div>
-                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">关卡完成!</h2>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">关卡完成!</h2>
                         <p class="text-gray-500 mb-6">你获得了 <span id="modal-stars" class="text-yellow-500 font-bold text-xl">★★★</span></p>
-                        
                         <div class="grid grid-cols-2 gap-3 mb-6">
                             <div class="bg-blue-50 p-3 rounded-xl">
                                 <div class="text-xs text-gray-500">本关掌握</div>
@@ -171,66 +210,57 @@
                                 <div class="font-bold text-orange-600" id="modal-total">0/500</div>
                             </div>
                         </div>
-
-                        <button onclick="showMap()" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-bold text-lg shadow-lg btn-active">
+                        <button onclick="showMap()" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl font-bold shadow-lg btn-active">
                             继续挑战
                         </button>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <!-- 视图 3: 错题本 -->
-        <div id="view-wrongbook" class="absolute inset-0 bg-[#F0F7F4] hidden flex-col p-4 sm:p-6 overflow-hidden">
-            <div class="flex items-center justify-between mb-4 sm:mb-6">
-                <button onclick="showMap()" class="bg-white hover:bg-gray-50 text-gray-600 px-4 py-2 rounded-xl shadow-md font-bold flex items-center gap-2 btn-active transition-all text-sm sm:text-base">
+        <!-- 错题本视图 -->
+        <div id="view-wrongbook" class="absolute inset-0 hidden flex-col p-4 overflow-y-auto no-scrollbar" style="background: linear-gradient(145deg, #1A1A2E 0%, #16213E 100%);">
+            <div class="flex items-center justify-between mb-4">
+                <button onclick="showMap()" class="glass text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 btn-active text-sm">
                     <span>⬅️</span> 返回
                 </button>
-                <h2 class="text-xl sm:text-2xl font-bold text-red-600 flex items-center"><span class="mr-2">📕</span>我的错题本</h2>
-                <div class="w-16 sm:w-24"></div>
+                <h2 class="text-xl font-bold text-white flex items-center"><span class="mr-2">📖</span>我的错题本</h2>
+                <div class="w-16"></div>
             </div>
 
-            <div class="flex-1 overflow-y-auto no-scrollbar pb-10">
-                <div id="wrong-list-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                    <!-- 错题卡片 -->
-                </div>
-                
-                <div id="wrong-empty-state" class="hidden flex-col items-center justify-center h-64 text-gray-400">
+            <div class="flex-1">
+                <div id="wrong-list-container" class="grid grid-cols-1 gap-4"></div>
+                <div id="wrong-empty-state" class="hidden flex-col items-center justify-center h-64 text-white/50">
                     <span class="text-6xl mb-4">✅</span>
-                    <p class="text-lg font-bold">太棒了！目前没有错题</p>
-                    <p class="text-sm">继续保持，争取全对通关！</p>
+                    <p class="text-lg font-bold">没有错题</p>
+                    <p class="text-sm">继续保持！</p>
                 </div>
             </div>
         </div>
-
     </main>
 
- <!-- ================= JavaScript 逻辑 ================= -->
- <script>
+    <script>
     // ==========================================
-    // 1. 数据定义 (Data Structure)
+    // 1. 数据定义
     // ==========================================
     
     const LEVELS_CONFIG = [
-        { id: 1, topic: "基础问候", icon: "👋", color: "blue" },
-        { id: 2, topic: "礼貌用语", icon: "🙏", color: "red" },
-        { id: 3, topic: "饮食点餐", icon: "🍜", color: "orange" },
-        { id: 4, topic: "购物问价", icon: "💰", color: "purple" },
-        { id: 5, topic: "交通出行", icon: "🚌", color: "indigo" },
-        { id: 6, topic: "问路求助", icon: "🗺️", color: "cyan" },
-        { id: 7, topic: "时间与数字", icon: "⏰", color: "teal" },
-        { id: 8, topic: "紧急情况", icon: "⚠️", color: "red" },
-        { id: 9, topic: "校园生活", icon: "🎒", color: "blue" },
-        { id: 10, topic: "情感日常", icon: "😊", color: "yellow" }
+        { id: 1, topic: "基础问候", icon: "👋", color: "from-blue-500 to-blue-600" },
+        { id: 2, topic: "礼貌用语", icon: "🙏", color: "from-red-500 to-red-600" },
+        { id: 3, topic: "饮食点餐", icon: "🍜", color: "from-orange-500 to-orange-600" },
+        { id: 4, topic: "购物问价", icon: "💰", color: "from-purple-500 to-purple-600" },
+        { id: 5, topic: "交通出行", icon: "🚌", color: "from-indigo-500 to-indigo-600" },
+        { id: 6, topic: "问路求助", icon: "🗺️", color: "from-cyan-500 to-cyan-600" },
+        { id: 7, topic: "时间数字", icon: "⏰", color: "from-teal-500 to-teal-600" },
+        { id: 8, topic: "紧急情况", icon: "⚠️", color: "from-red-500 to-red-600" },
+        { id: 9, topic: "校园生活", icon: "🎒", color: "from-blue-500 to-blue-600" },
+        { id: 10, topic: "情感日常", icon: "😊", color: "from-yellow-500 to-yellow-600" }
     ];
 
-    // 获取句子（从 CANTONESE_FULL_DB 读取）
     function getSentencesByLevel(levelId) {
         if (typeof CANTONESE_FULL_DB !== 'undefined' && CANTONESE_FULL_DB[levelId]) {
             return CANTONESE_FULL_DB[levelId];
         }
-        // 备用：生成模拟数据
         let sentences = [];
         for(let i = 1; i <= 5; i++) {
             sentences.push({
@@ -242,15 +272,13 @@
         }
         return sentences;
     }
-	
 
-    // 为了兼容原有代码
     function generateSentences(levelId) {
         return getSentencesByLevel(levelId);
     }
 
     // ==========================================
-    // 2. 状态管理 (State Management)
+    // 2. 状态管理
     // ==========================================
     
     const STATE = {
@@ -276,7 +304,6 @@
             const parsed = JSON.parse(saved);
             Object.assign(STATE, parsed);
         }
-        // 确保每个关卡都有进度记录
         for (let i = 1; i <= 10; i++) {
             if (!STATE.levelProgress[i]) {
                 STATE.levelProgress[i] = { stars: 0, completed: false, correctCount: 0 };
@@ -294,7 +321,6 @@
         if (STATE.lastLoginDate !== today) {
             const yesterday = new Date();
             yesterday.setDate(yesterday.getDate() - 1);
-            
             if (STATE.lastLoginDate === yesterday.toDateString()) {
                 STATE.streak++;
             } else if (STATE.lastLoginDate !== today) {
@@ -306,11 +332,11 @@
     }
 
     // ==========================================
-    // 3. 视图渲染 (Rendering)
+    // 3. 视图渲染
     // ==========================================
 
     function renderMap() {
-        const container = document.querySelector('#view-map .grid');
+        const container = document.getElementById('map-grid');
         if (!container) return;
         container.innerHTML = '';
 
@@ -318,50 +344,39 @@
             const progress = STATE.levelProgress[level.id] || { stars: 0, completed: false };
             const isLocked = index > 0 && !STATE.levelProgress[LEVELS_CONFIG[index-1].id]?.completed;
             
-            const colorClasses = {
-                blue: 'bg-blue-500', red: 'bg-red-500', orange: 'bg-orange-500',
-                purple: 'bg-purple-500', indigo: 'bg-indigo-500', cyan: 'bg-cyan-500',
-                teal: 'bg-teal-500', yellow: 'bg-yellow-500'
-            };
-            const bgColor = colorClasses[level.color] || 'bg-gray-500';
-
             const card = document.createElement('div');
-            card.className = `relative group cursor-pointer transition-all duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : 'hover:-translate-y-1 hover:shadow-xl'}`;
+            card.className = `level-card cursor-pointer transition-all duration-300 ${isLocked ? 'opacity-40 grayscale pointer-events-none' : 'hover:scale-105'}`;
             
             let starsHtml = '';
             for(let i=1; i<=3; i++) {
-                starsHtml += `<span class="text-${i <= progress.stars ? 'yellow-400' : 'gray-300'} text-lg">⭐</span>`;
+                starsHtml += `<span class="text-${i <= progress.stars ? 'yellow-400' : 'gray-300'} text-sm">⭐</span>`;
             }
 
             card.innerHTML = `
-                <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-md border-b-4 ${bgColor.replace('bg-', 'border-')} h-40 sm:h-48 flex flex-col items-center justify-between">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 ${bgColor} rounded-full flex items-center justify-center text-3xl shadow-lg mb-2">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 h-36 flex flex-col items-center justify-between">
+                    <div class="w-14 h-14 bg-gradient-to-r ${level.color} rounded-full flex items-center justify-center text-2xl shadow-lg animate-float">
                         ${level.icon}
                     </div>
-                    <div class="text-center w-full">
-                        <div class="font-bold text-gray-700 text-lg">第${level.id}关</div>
-                        <div class="text-gray-500 text-xs sm:text-sm mb-2 truncate">${level.topic}</div>
-                        <div class="flex gap-1 justify-center">${starsHtml}</div>
+                    <div class="text-center">
+                        <div class="font-bold text-white text-base">${level.topic}</div>
+                        <div class="flex gap-0.5 justify-center mt-1">${starsHtml}</div>
                     </div>
-                    ${isLocked ? '<div class="absolute inset-0 flex items-center justify-center bg-black/10 rounded-2xl"><span class="text-3xl">🔒</span></div>' : ''}
+                    ${isLocked ? '<div class="absolute inset-0 flex items-center justify-center bg-black/30 rounded-2xl"><span class="text-2xl">🔒</span></div>' : ''}
                 </div>
             `;
 
             if (!isLocked) {
                 card.onclick = () => startLevel(level.id);
             }
-
             container.appendChild(card);
         });
     }
 
     function updateHeader() {
-        const streakDisplay = document.getElementById('streak-display');
         const globalProgressText = document.getElementById('global-progress-text');
         const globalProgressBar = document.getElementById('global-progress-bar');
         const wrongCountBadge = document.getElementById('wrong-count-badge');
         
-        if (streakDisplay) streakDisplay.innerText = `${STATE.streak}天`;
         if (globalProgressText) globalProgressText.innerText = `${STATE.totalLearned} / 500`;
         const percent = Math.min(100, (STATE.totalLearned / 500) * 100);
         if (globalProgressBar) globalProgressBar.style.width = `${percent}%`;
@@ -404,11 +419,9 @@
         const levelInfo = LEVELS_CONFIG.find(l => l.id === levelId);
         const headerLevelName = document.getElementById('header-level-name');
         const headerLevelTopic = document.getElementById('header-level-topic');
-        const levelStars = document.getElementById('level-stars');
         
         if (headerLevelName) headerLevelName.innerText = `第${levelId}关`;
         if (headerLevelTopic) headerLevelTopic.innerText = levelInfo.topic;
-        if (levelStars) levelStars.innerText = STATE.levelProgress[levelId].stars;
 
         hideAllViews();
         const learningView = document.getElementById('view-learning');
@@ -416,16 +429,12 @@
             learningView.classList.remove('hidden');
             learningView.classList.add('flex');
         }
-		
-		    // 重置进度条容器（下次重新创建）
-		const oldContainer = document.getElementById('level-progress-container');
-		if (oldContainer) oldContainer.remove();
         
         loadSentence();
     }
 
     // ==========================================
-    // 4. 粤语音频播放（预录音频）
+    // 4. 粤语音频播放
     // ==========================================
     
     let audioCache = new Map();
@@ -433,11 +442,9 @@
 
     async function loadAudioIndex() {
         if (audioIndexLoaded) return;
-        
         try {
             const response = await fetch('./audio/index.json');
             const index = await response.json();
-            
             for (const level of Object.values(index.levels)) {
                 for (const item of level) {
                     const audio = new Audio();
@@ -449,40 +456,30 @@
             audioIndexLoaded = true;
             console.log(`✅ 已加载 ${audioCache.size} 个粤语音频`);
         } catch(e) {
-            console.warn('加载音频索引失败，将使用在线TTS', e);
+            console.warn('加载音频索引失败', e);
         }
     }
 
     async function speakText(text) {
         if (!text) return;
-        
-        if (!audioIndexLoaded) {
-            await loadAudioIndex();
-        }
+        if (!audioIndexLoaded) await loadAudioIndex();
         
         const audio = audioCache.get(text);
-        
         if (audio) {
             audio.currentTime = 0;
             try {
                 await audio.play();
                 console.log('播放成功:', text);
                 return;
-            } catch(e) {
-                console.log('本地播放失败:', text, e);
-            }
+            } catch(e) {}
         }
         
-        // 降级：在线TTS
         try {
             const url = `https://edge-tts.vercel.app/api/tts?text=${encodeURIComponent(text)}&voice=zh-HK-HiuMaanNeural`;
             const fallbackAudio = new Audio();
             fallbackAudio.src = url;
             await fallbackAudio.play();
-            console.log('在线播放成功:', text);
-        } catch(e) {
-            console.log('播放失败:', text);
-        }
+        } catch(e) {}
     }
 
     async function playCurrentAudio() {
@@ -490,23 +487,19 @@
         const sentence = sentences[STATE.currentSentenceIndex];
         if (!sentence) return;
         
-        const playBtn = document.querySelector('#stage-listening .group');
+        const playBtn = document.querySelector('#stage-listening .play-btn');
         if (playBtn) {
             playBtn.classList.add('scale-95');
             setTimeout(() => playBtn.classList.remove('scale-95'), 200);
         }
-        
         await speakText(sentence.c);
     }
 
     async function playWrongAudio(index) {
         const item = STATE.wrongBook[index];
-        if (item) {
-            await speakText(item.sentence.c);
-        }
+        if (item) await speakText(item.sentence.c);
     }
 
-    // 预加载音频
     loadAudioIndex();
 
     // ==========================================
@@ -530,42 +523,28 @@
         container.innerHTML = '';
 
         if (STATE.wrongBook.length === 0) {
-            if (emptyState) {
-                emptyState.classList.remove('hidden');
-                emptyState.classList.add('flex');
-            }
+            if (emptyState) emptyState.classList.remove('hidden');
             return;
         }
-
-        if (emptyState) {
-            emptyState.classList.add('hidden');
-            emptyState.classList.remove('flex');
-        }
+        if (emptyState) emptyState.classList.add('hidden');
 
         [...STATE.wrongBook].reverse().forEach((item, index) => {
             const realIndex = STATE.wrongBook.length - 1 - index;
             const levelName = LEVELS_CONFIG.find(l => l.id === item.levelId)?.topic || `第${item.levelId}关`;
 
             const card = document.createElement('div');
-            card.className = "bg-white rounded-xl p-4 shadow-md border-l-4 border-red-400 flex flex-col justify-between animate-pop";
-            
+            card.className = "bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 animate-pop";
             card.innerHTML = `
-                <div>
-                    <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded">${levelName}</span>
-                        <span class="text-xs text-gray-400">${new Date(item.date).toLocaleDateString()}</span>
-                    </div>
-                    <div class="text-lg font-bold text-gray-800 mb-1">${item.sentence.c}</div>
-                    <div class="text-sm text-gray-500 font-mono mb-2">${item.sentence.j}</div>
-                    <div class="text-gray-600 text-sm bg-gray-50 p-2 rounded">意思：${item.sentence.m}</div>
+                <div class="flex justify-between items-start mb-2">
+                    <span class="text-xs font-bold text-red-400 bg-red-500/20 px-2 py-1 rounded">${levelName}</span>
+                    <span class="text-xs text-white/50">${new Date(item.date).toLocaleDateString()}</span>
                 </div>
+                <div class="text-lg font-bold text-white mb-1">${item.sentence.c}</div>
+                <div class="text-sm text-white/50 font-mono mb-2">${item.sentence.j}</div>
+                <div class="text-white/70 text-sm bg-white/5 p-2 rounded">${item.sentence.m}</div>
                 <div class="mt-4 flex gap-2">
-                    <button onclick="playWrongAudio(${realIndex})" class="flex-1 py-2 bg-blue-50 text-blue-600 rounded-lg font-bold text-sm hover:bg-blue-100 btn-active flex items-center justify-center gap-1">
-                        <span>🔊</span> 重听
-                    </button>
-                    <button onclick="removeWrongItem(${realIndex})" class="flex-1 py-2 bg-green-50 text-green-600 rounded-lg font-bold text-sm hover:bg-green-100 btn-active flex items-center justify-center gap-1">
-                        <span>✅</span> 已掌握
-                    </button>
+                    <button onclick="playWrongAudio(${realIndex})" class="flex-1 py-2 bg-blue-500/20 text-blue-300 rounded-lg font-bold text-sm hover:bg-blue-500/30 btn-active">🔊 重听</button>
+                    <button onclick="removeWrongItem(${realIndex})" class="flex-1 py-2 bg-green-500/20 text-green-300 rounded-lg font-bold text-sm hover:bg-green-500/30 btn-active">✅ 已掌握</button>
                 </div>
             `;
             container.appendChild(card);
@@ -583,124 +562,66 @@
     // ==========================================
 
     function loadSentence() {
-		const sentences = getSentencesByLevel(STATE.currentLevel);
-		
-		if (STATE.currentSentenceIndex >= sentences.length) {
-			finishLevel();
-			return;
-		}
+        const sentences = getSentencesByLevel(STATE.currentLevel);
+        if (STATE.currentSentenceIndex >= sentences.length) {
+            finishLevel();
+            return;
+        }
 
-		const sentence = sentences[STATE.currentSentenceIndex];
-		
-		// ========== 更新进度条 ==========
-		const totalInLevel = sentences.length;
-		const currentIndex = STATE.currentSentenceIndex;
-		const progressPercent = (currentIndex / totalInLevel) * 100;
-		
-		// 获取或创建进度条容器
-		let progressContainer = document.getElementById('level-progress-container');
-		if (!progressContainer) {
-			const stageListening = document.getElementById('stage-listening');
-			if (stageListening) {
-				const glassCard = stageListening.querySelector('.glass-card');
-				if (glassCard) {
-					progressContainer = document.createElement('div');
-					progressContainer.id = 'level-progress-container';
-					progressContainer.className = 'w-full mb-4 px-4';
-					progressContainer.innerHTML = `
-						<div class="flex justify-between text-xs text-gray-500 mb-1">
-							<span>📝 关卡进度</span>
-							<span id="level-progress-text">0 / ${totalInLevel}</span>
-						</div>
-						<div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-							<div id="level-progress-bar" class="bg-blue-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
-						</div>
-					`;
-					glassCard.insertBefore(progressContainer, glassCard.firstChild);
-				}
-			}
-		}
-		
-		// 更新进度条显示
-		const progressText = document.getElementById('level-progress-text');
-		const progressBar = document.getElementById('level-progress-bar');
-		if (progressText) progressText.innerText = `${currentIndex} / ${totalInLevel}`;
-		if (progressBar) progressBar.style.width = `${progressPercent}%`;
-		
-		// 原有的 loadSentence 代码
-		const feedbackEl = document.getElementById('listening-feedback');
-		if (feedbackEl) {
-			feedbackEl.classList.add('hidden');
-		}
-		
-		const optionsContainer = document.getElementById('options-container');
-		if (!optionsContainer) return;
-		optionsContainer.innerHTML = '';
-		
-		// 生成干扰选项
-		const otherSentences = sentences.filter(s => s.c !== sentence.c);
-		const randomOthers = [...otherSentences].sort(() => Math.random() - 0.5).slice(0, 3);
-		
-		let allOptions = [
-			{ text: sentence.m, correct: true },
-			...randomOthers.map(s => ({ text: s.m, correct: false }))
-		];
-		allOptions.sort(() => Math.random() - 0.5);
+        const sentence = sentences[STATE.currentSentenceIndex];
+        
+        const feedbackEl = document.getElementById('listening-feedback');
+        if (feedbackEl) feedbackEl.classList.add('hidden');
+        
+        const optionsContainer = document.getElementById('options-container');
+        if (!optionsContainer) return;
+        optionsContainer.innerHTML = '';
+        
+        const otherSentences = sentences.filter(s => s.c !== sentence.c);
+        const randomOthers = [...otherSentences].sort(() => Math.random() - 0.5).slice(0, 3);
+        
+        let allOptions = [
+            { text: sentence.m, correct: true },
+            ...randomOthers.map(s => ({ text: s.m, correct: false }))
+        ];
+        allOptions.sort(() => Math.random() - 0.5);
 
-		allOptions.forEach(opt => {
-			const btn = document.createElement('button');
-			btn.className = "bg-white hover:bg-blue-50 border-2 border-gray-100 hover:border-blue-200 p-4 rounded-xl text-lg font-medium text-gray-700 shadow-sm transition-all btn-active h-20 flex items-center justify-center";
-			btn.innerText = opt.text;
-			btn.onclick = () => handleAnswer(opt.correct, btn, sentence);
-			optionsContainer.appendChild(btn);
-		});
+        allOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = "option-btn p-4 rounded-xl text-base font-medium transition-all h-16 flex items-center justify-center";
+            btn.innerText = opt.text;
+            btn.onclick = () => handleAnswer(opt.correct, btn, sentence);
+            optionsContainer.appendChild(btn);
+        });
 
-		setTimeout(() => {
-			playCurrentAudio();
-		}, 300);
-	}
+        setTimeout(() => playCurrentAudio(), 300);
+    }
 
     function handleAnswer(isCorrect, btnElement, sentenceObj) {
-		const allBtns = document.querySelectorAll('#options-container button');
-		allBtns.forEach(b => b.disabled = true);
-
-		const feedbackEl = document.getElementById('listening-feedback');
-		
-		if (isCorrect) {
-			// 正确：立即进入下一题，不显示反馈
-			btnElement.classList.add('bg-green-100', 'border-green-500', 'text-green-700');
-			
-			STATE.levelProgress[STATE.currentLevel].correctCount++;
-			
-			// 延迟0.3秒后进入下一题（不给用户额外操作）
-			setTimeout(() => {
-				STATE.currentSentenceIndex++;
-				STATE.totalLearned++;
-				saveData();
-				loadSentence();
-			}, 300);
-		} else {
-			// 错误：显示反馈，加入错题本，2秒后重试
-			btnElement.classList.remove('bg-white', 'border-gray-100');
-			btnElement.classList.add('bg-red-100', 'border-red-500', 'text-red-700', 'animate-shake');
-			
-			if (feedbackEl) {
-				feedbackEl.classList.remove('hidden');
-				feedbackEl.classList.add('bg-red-100', 'text-red-700');
-				feedbackEl.innerHTML = '<span class="text-xl">❌</span> 答错了，已加入错题本';
-			}
-			
-			addToWrongBook(STATE.currentLevel, sentenceObj);
-			
-			// 自动重播一次声音
-			playCurrentAudio();
-			
-			setTimeout(() => {
-				// 重新加载同一题
-				loadSentence();
-			}, 2000);
-		}
-	}
+        const allBtns = document.querySelectorAll('#options-container button');
+        allBtns.forEach(b => b.disabled = true);
+        const feedbackEl = document.getElementById('listening-feedback');
+        
+        if (isCorrect) {
+            btnElement.classList.add('correct');
+            STATE.levelProgress[STATE.currentLevel].correctCount++;
+            setTimeout(() => {
+                STATE.currentSentenceIndex++;
+                STATE.totalLearned++;
+                saveData();
+                loadSentence();
+            }, 300);
+        } else {
+            btnElement.classList.add('wrong', 'animate-shake');
+            if (feedbackEl) {
+                feedbackEl.classList.remove('hidden');
+                feedbackEl.className = "mt-4 w-full p-3 rounded-xl flex items-center justify-center gap-2 font-bold text-base bg-red-500/20 text-red-300";
+                feedbackEl.innerHTML = '<span>❌</span> 答错了，已加入错题本';
+            }
+            addToWrongBook(STATE.currentLevel, sentenceObj);
+            setTimeout(() => loadSentence(), 2000);
+        }
+    }
 
     function addToWrongBook(levelId, sentence) {
         const exists = STATE.wrongBook.some(item => item.sentence.c === sentence.c && item.levelId === levelId);
@@ -730,25 +651,11 @@
             saveData();
         }
 
-        const modalStars = document.getElementById('modal-stars');
-        const modalSentences = document.getElementById('modal-sentences');
-        const modalTotal = document.getElementById('modal-total');
+        document.getElementById('modal-stars').innerHTML = '⭐'.repeat(stars) + '⭐'.repeat(3-stars);
+        document.getElementById('modal-sentences').innerText = `${totalSentences} 句`;
+        document.getElementById('modal-total').innerText = `${STATE.totalLearned}/500`;
+        document.getElementById('completion-modal').classList.remove('hidden');
         
-        if (modalStars) modalStars.innerHTML = '⭐'.repeat(stars) + '<span class="text-gray-300">' + '⭐'.repeat(3-stars) + '</span>';
-        if (modalSentences) modalSentences.innerText = `${totalSentences} 句`;
-        if (modalTotal) modalTotal.innerText = `${STATE.totalLearned}/500`;
-        
-        const completionModal = document.getElementById('completion-modal');
-        if (completionModal) completionModal.classList.remove('hidden');
-		
-		// 隐藏或重置进度条
-		const progressContainer = document.getElementById('level-progress-container');
-		if (progressContainer) {
-			progressContainer.style.opacity = '0.5';
-		}
-		
-        
-        // 播放胜利音效
         try {
             const ctx = new (window.AudioContext || window.webkitAudioContext)();
             const osc = ctx.createOscillator();
@@ -765,17 +672,15 @@
         } catch (e) {}
     }
 
-    // 启动应用
     initApp();
-
-	// 注册 Service Worker
-	if ('serviceWorker' in navigator) {
-	  window.addEventListener('load', () => {
-		navigator.serviceWorker.register('./sw.js')
-		  .then(reg => console.log('Service Worker registered:', reg))
-		  .catch(err => console.error('SW registration failed:', err));
-	  });
-	}
+    
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('SW registered:', reg))
+                .catch(err => console.error('SW failed:', err));
+        });
+    }
     </script>
 </body>
 </html>
