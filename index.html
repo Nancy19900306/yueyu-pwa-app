@@ -224,8 +224,13 @@
 			<span class="text-white/90 text-xs sm:text-sm font-medium truncate max-w-[100px] sm:max-w-[150px]" id="header-level-topic">基础问候</span>
 		</div>
 
-		<!-- 右侧：错题本按钮 -->
+		
 		<div class="flex items-center gap-2 w-1/3 justify-end">
+		    <!-- 全部词汇按钮 -->
+			<button onclick="showAllWords()" class="relative bg-white/10 hover:bg-white/20 text-white p-2 rounded-xl transition-all btn-active backdrop-blur-sm">
+				<span class="text-lg">📚</span>
+			</button>
+			<!-- 右侧：错题本按钮 -->
 			<button onclick="showWrongBook()" class="relative bg-white/10 hover:bg-white/20 text-white p-2 rounded-xl transition-all btn-active backdrop-blur-sm">
 				<span class="text-lg">📖</span>
 				<span id="wrong-count-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
@@ -320,6 +325,31 @@
                 </div>
             </div>
         </div>
+		
+		
+		<!-- 视图 4: 全部词汇 -->
+		<div id="view-allwords" class="absolute inset-0 hidden flex-col p-4 overflow-y-auto no-scrollbar" style="background: linear-gradient(145deg, #1A1A2E 0%, #16213E 100%);">
+			<div class="flex items-center justify-between mb-4">
+				<button onclick="showMap()" class="glass text-white px-4 py-2 rounded-xl font-bold flex items-center gap-2 btn-active text-sm">
+					<span>⬅️</span> 返回
+				</button>
+				<h2 class="text-xl font-bold text-white flex items-center"><span class="mr-2">📚</span>全部词汇</h2>
+				<div class="w-16"></div>
+			</div>
+			
+			<!-- 关卡筛选标签 -->
+			<div class="flex flex-wrap gap-2 mb-4 overflow-x-auto pb-2 no-scrollbar" id="level-filter">
+				<!-- 动态生成关卡筛选按钮 -->
+			</div>
+
+			<div class="flex-1">
+				<div id="all-words-container" class="grid grid-cols-1 gap-4"></div>
+				<div id="all-words-empty" class="hidden flex-col items-center justify-center h-64 text-white/50">
+					<span class="text-6xl mb-4">📚</span>
+					<p class="text-lg font-bold">加载中...</p>
+				</div>
+			</div>
+		</div>
     </main>
 
     <script>
@@ -479,17 +509,19 @@
         updateHeader();
     }
 
-    function hideAllViews() {
-        ['view-learning', 'view-map', 'view-wrongbook'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.classList.add('hidden');
-                el.classList.remove('flex');
-            }
-        });
-        const completionModal = document.getElementById('completion-modal');
-        if (completionModal) completionModal.classList.add('hidden');
-    }
+	
+	function hideAllViews() {
+    ['view-learning', 'view-map', 'view-wrongbook', 'view-allwords'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.classList.add('hidden');
+            el.classList.remove('flex');
+        }
+    });
+    const completionModal = document.getElementById('completion-modal');
+    if (completionModal) completionModal.classList.add('hidden');
+}
+	
 
     function startLevel(levelId) {
     STATE.currentLevel = levelId;
@@ -643,6 +675,10 @@
         saveData();
         renderWrongBookList();
     }
+
+
+
+
 
     // ==========================================
     // 6. 核心学习流程
@@ -804,6 +840,167 @@
             osc.stop(ctx.currentTime + 0.5);
         } catch (e) {}
     }
+	
+	
+	// ==========================================
+	// 7. 全部词汇功能
+	// ==========================================
+
+	let currentFilterLevel = 0; // 0=全部, 1-10=具体关卡
+
+	function showAllWords() {
+		hideAllViews();
+		const allWordsView = document.getElementById('view-allwords');
+		if (allWordsView) {
+			allWordsView.classList.remove('hidden');
+			allWordsView.classList.add('flex');
+		}
+		renderLevelFilter();
+		renderAllWords();
+	}
+
+	function renderLevelFilter() {
+		const filterContainer = document.getElementById('level-filter');
+		if (!filterContainer) return;
+		
+		filterContainer.innerHTML = `
+			<button onclick="filterByLevel(0)" class="px-4 py-2 rounded-full text-sm font-medium transition-all ${currentFilterLevel === 0 ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg' : 'bg-white/10 text-white/70 hover:bg-white/20'}">
+				📖 全部
+			</button>
+		`;
+		
+		for (let i = 1; i <= 10; i++) {
+			const levelInfo = LEVELS_CONFIG.find(l => l.id === i);
+			filterContainer.innerHTML += `
+				<button onclick="filterByLevel(${i})" class="px-4 py-2 rounded-full text-sm font-medium transition-all ${currentFilterLevel === i ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg' : 'bg-white/10 text-white/70 hover:bg-white/20'}">
+					${levelInfo.icon} ${levelInfo.topic}
+				</button>
+			`;
+		}
+	}
+
+	function filterByLevel(levelId) {
+		currentFilterLevel = levelId;
+		renderLevelFilter();
+		renderAllWords();
+	}
+
+	function renderAllWords() {
+		const container = document.getElementById('all-words-container');
+		const emptyState = document.getElementById('all-words-empty');
+		if (!container) return;
+		
+		let allSentences = [];
+		
+		if (currentFilterLevel === 0) {
+			// 全部关卡
+			for (let i = 1; i <= 10; i++) {
+				const sentences = getSentencesByLevel(i);
+				allSentences.push(...sentences.map(s => ({ ...s, levelId: i, levelName: LEVELS_CONFIG.find(l => l.id === i)?.topic })));
+			}
+		} else {
+			// 单个关卡
+			const sentences = getSentencesByLevel(currentFilterLevel);
+			allSentences = sentences.map(s => ({ 
+				...s, 
+				levelId: currentFilterLevel, 
+				levelName: LEVELS_CONFIG.find(l => l.id === currentFilterLevel)?.topic 
+			}));
+		}
+		
+		if (allSentences.length === 0) {
+			if (emptyState) emptyState.classList.remove('hidden');
+			container.innerHTML = '';
+			return;
+		}
+		
+		if (emptyState) emptyState.classList.add('hidden');
+		
+		container.innerHTML = '';
+		
+		allSentences.forEach((item, index) => {
+			const isWrong = STATE.wrongBook.some(w => w.sentence.c === item.c && w.levelId === item.levelId);
+			
+			const card = document.createElement('div');
+			card.className = "bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 animate-slide-up";
+			card.style.animationDelay = `${index * 0.02}s`;
+			card.innerHTML = `
+				<div class="flex justify-between items-start mb-2">
+					<span class="text-xs font-bold text-purple-400 bg-purple-500/20 px-2 py-1 rounded">${item.levelName}</span>
+					${isWrong ? '<span class="text-xs text-red-400 bg-red-500/20 px-2 py-1 rounded">❌ 错题</span>' : '<span class="text-xs text-green-400 bg-green-500/20 px-2 py-1 rounded">✅ 未错</span>'}
+				</div>
+				<div class="text-lg font-bold text-white mb-1">${item.c}</div>
+				<div class="text-sm text-white/50 font-mono mb-2">${item.j || '发音待补充'}</div>
+				<div class="text-white/70 text-sm bg-white/5 p-2 rounded">${item.m}</div>
+				<div class="mt-4 flex gap-2">
+					<button onclick="playWordAudio('${item.c.replace(/'/g, "\\'")}')" class="flex-1 py-2 bg-blue-500/20 text-blue-300 rounded-lg font-bold text-sm hover:bg-blue-500/30 btn-active flex items-center justify-center gap-1">
+						<span>🔊</span> 发音
+					</button>
+					${isWrong ? 
+						`<button onclick="removeFromWrongBookDirect('${item.c.replace(/'/g, "\\'")}', ${item.levelId})" class="flex-1 py-2 bg-green-500/20 text-green-300 rounded-lg font-bold text-sm hover:bg-green-500/30 btn-active flex items-center justify-center gap-1">
+							<span>✅</span> 从错题移除
+						</button>` : 
+						`<button onclick="addToWrongBookDirect('${item.c.replace(/'/g, "\\'")}', ${item.levelId})" class="flex-1 py-2 bg-yellow-500/20 text-yellow-300 rounded-lg font-bold text-sm hover:bg-yellow-500/30 btn-active flex items-center justify-center gap-1">
+							<span>⚠️</span> 加入错题
+						</button>`
+					}
+				</div>
+			`;
+			container.appendChild(card);
+		});
+	}
+
+	// 播放单词发音
+	async function playWordAudio(text) {
+		await speakText(text);
+	}
+
+	// 直接从全部词汇加入错题本
+	function addToWrongBookDirect(text, levelId) {
+		// 查找完整的句子对象
+		const sentences = getSentencesByLevel(levelId);
+		const sentence = sentences.find(s => s.c === text);
+		
+		if (sentence) {
+			const exists = STATE.wrongBook.some(item => item.sentence.c === sentence.c && item.levelId === levelId);
+			if (!exists) {
+				STATE.wrongBook.push({
+					id: Date.now(),
+					levelId: levelId,
+					sentence: sentence,
+					date: new Date().toISOString()
+				});
+				saveData();
+				renderAllWords(); // 刷新当前视图
+				renderWrongBookList(); // 同时刷新错题本
+				showToast('✅ 已加入错题本');
+			} else {
+				showToast('⚠️ 已在错题本中');
+			}
+		}
+	}
+
+	// 直接从全部词汇移出错题本
+	function removeFromWrongBookDirect(text, levelId) {
+		const index = STATE.wrongBook.findIndex(item => item.sentence.c === text && item.levelId === levelId);
+		if (index !== -1) {
+			STATE.wrongBook.splice(index, 1);
+			saveData();
+			renderAllWords(); // 刷新当前视图
+			renderWrongBookList(); // 同时刷新错题本
+			showToast('🎉 已从错题本移除');
+		}
+	}
+
+	// 显示提示消息
+	function showToast(message) {
+		const toast = document.createElement('div');
+		toast.className = 'fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-black/80 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm z-50 animate-slide-up';
+		toast.innerText = message;
+		document.body.appendChild(toast);
+		setTimeout(() => toast.remove(), 2000);
+	}
+	
 
     initApp();
     
